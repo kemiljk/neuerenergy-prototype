@@ -10,11 +10,9 @@
         <v-list-item-title class="subtitle-1 font-weight-bold py-2">{{ notification.description }}</v-list-item-title>
         <v-list-item-subtitle class="body-1 pt-2">{{ notification.details }}</v-list-item-subtitle>
       </v-col>
-      <v-col cols="1" align-items="center" class="my-auto">
+      <v-col cols="1" align-items="end" class="my-auto">
         <div class="text-center">
-          <v-btn text icon :to="notification.url">
-            <v-icon large>mdi-chevron-right</v-icon>
-          </v-btn>
+          <v-icon large>mdi-chevron-right</v-icon>
         </div>
       </v-col>
     </v-list-item>

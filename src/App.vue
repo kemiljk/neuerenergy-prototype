@@ -59,8 +59,8 @@
         <img src="./assets/NeuerEnergy_Logotype-white.png" height="40px" />
       </div>
       <v-spacer></v-spacer>
-      <!-- PULL FROM DATABASE -->
       <v-app-bar-title class="text-center">
+      <!-- PULL FROM DATABASE -->
         <h2>{{ client.name }}</h2>
       </v-app-bar-title>
       <v-spacer></v-spacer>
@@ -73,14 +73,13 @@
             <v-icon>mdi-bell</v-icon>
           </v-btn>
         </template>
+        <v-card>
         <v-list>
-          <v-list-item v-for="(menuItem, index) in menuItems" :key="index" :to="menuItem.url">
-            <v-list-item-icon>
-              <v-icon>{{ menuItem.icon }}</v-icon>
-            </v-list-item-icon>
-            <v-list-item-title>{{ menuItem.title }}</v-list-item-title>
+          <v-list-item v-for="notification in notifications" :key="`${notification.id}`">
+            <Notifications :notification="notification" />
           </v-list-item>
         </v-list>
+        </v-card>
       </v-menu>
     </v-app-bar>
     <v-content>
@@ -113,8 +112,18 @@
 </template>
 
 <script>
+import Notifications from "./components/Notifications"
+
 export default {
   name: "App",
+  components: {
+    Notifications
+  },
+  props: {    
+        notificationCard: {
+            type: String
+        },
+    },
   data() {
     return {
       client: {
@@ -152,6 +161,29 @@ export default {
         { title: "Settings", icon: "mdi-cogs", url: "/settings" },
         { title: "Log out", icon: "mdi-logout-variant", url: "/logout" }
       ],
+      notifications: [
+            {
+            id: 1,
+            date: "12 FEB 2020",
+            description: "PWR PPA • Added External Legal Counsel as Reviewer",
+            details: "Harry McCammond",
+            url: "/notifications/#"
+            },
+            {
+            id: 2,
+            date: "27 OCT 2019",
+            description: "CLR PPA • Initiated by Harry McCammond on 23rd Dec 2019",
+            details: "Awaiting contract initiation with CLR",
+            url: "/notifications/#"
+            },
+            {
+            id: 3,
+            date: "21 NOV 2019",
+            description: "Contrast PPA • By Małgorzata Switoniak-Jabłonska",
+            details: "Needs further discussion",
+            url: "/notifications/#"
+            },
+            ],
       right: false,
       miniVariant: true,
       expandOnHover: true,
