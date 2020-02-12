@@ -42,7 +42,7 @@
         height="93vh"
       >
         <v-list dense nav class="py-0">
-          <v-list-item two-line :class="miniVariant && 'px-0'">
+          <v-list-item two-line :class="miniVariant && 'px-0'" to="profile">
             <v-list-item-avatar>
               <img src="https://randomuser.me/api/portraits/men/11.jpg" />
             </v-list-item-avatar>
@@ -68,7 +68,7 @@
 
         <template v-slot:append>
           <div>
-            <v-list>
+            <v-list dense nav class="py-0">
             <v-list-item v-for="(menuItem, index) in menuItems" :key="index" :to="menuItem.url">
               <v-list-item-icon>
                 <v-icon>{{ menuItem.icon }}</v-icon>

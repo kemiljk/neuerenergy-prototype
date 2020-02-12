@@ -14,7 +14,7 @@
       </v-col>
       <v-col cols="3" align-items="center" class="my-auto">
       <div class="text-center">
-        <v-btn text icon>
+        <v-btn text icon :to="notification.url">
             <v-icon
               large
             >
