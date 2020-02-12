@@ -2,7 +2,7 @@
     <v-card
         >
         <v-card-title 
-        class="font-weight-bold grey lighten-3">
+        class="font-weight-bold grey lighten-2">
         {{ notificationCard.headline }}
         </v-card-title>
         <v-row>
