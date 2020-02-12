@@ -3,7 +3,7 @@
     <v-row class="mt-8">
       <v-col cols="12">
         <h1>Workflow</h1>
-        <h2>Create new tasks and assign people to get work done</h2>
+        <h3>Create new tasks and assign people to get work done</h3>
         <v-row class="mt-8">
           <v-col cols="12" v-for="workflow in workflows" :key="`${workflow.id}`">
             <Workflows :workflow="workflow" />

@@ -3,6 +3,7 @@
     <v-row class="mt-8">
       <v-col cols="12">
         <h1>Sites</h1>
+        <h3>You haven't got any sites yet, add some data below to populate your system</h3>
       </v-col>
     </v-row>
     <v-row class="mt-4">
