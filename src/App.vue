@@ -1,39 +1,6 @@
 <template>
   <v-app>
-    <!-- Header bar -->
-    <v-app-bar app dark>
-      <v-btn text icon @click.stop="drawer = !drawer" class="d-lg-none">
-        <v-icon>mdi-menu</v-icon>
-      </v-btn>
-      <div>
-        <img src="./assets/NeuerEnergy_Logotype-white.png" height="40px" />
-      </div>
-      <v-spacer></v-spacer>
-      <!-- ADD IN CLIENT NAME COMPONENT OR PULL FROM DATABASE -->
-      <v-app-bar-title class="text-center">
-        <h2>{{ client.name }}</h2>
-      </v-app-bar-title>
-      <v-spacer></v-spacer>
-      <v-btn @click="toggleTheme" text class="mr-2">
-        <v-icon>mdi-brightness-6</v-icon>
-      </v-btn>
-      <v-menu offset-y>
-        <template v-slot:activator="{ on }">
-          <v-btn icon v-on="on">
-            <v-icon>mdi-bell</v-icon>
-          </v-btn>
-        </template>
-        <v-list>
-          <v-list-item v-for="(menuItem, index) in menuItems" :key="index" :to="menuItem.url">
-            <v-list-item-icon>
-              <v-icon>{{ menuItem.icon }}</v-icon>
-            </v-list-item-icon>
-            <v-list-item-title>{{ menuItem.title }}</v-list-item-title>
-          </v-list-item>
-        </v-list>
-      </v-menu>
-    </v-app-bar>
-    <v-content>
+    <!-- Navigation Drawer -->
       <v-navigation-drawer
         v-model="drawer"
         :color="color"
@@ -41,8 +8,9 @@
         :mini-variant="miniVariant"
         :left="left"
         :src="bg"
-        absolute
-        height="93vh"
+        app
+        bottom
+        clipped
       >
         <v-list dense nav class="py-0">
           <v-list-item two-line :class="miniVariant && 'px-0'" to="profile">
@@ -82,6 +50,40 @@
           </div>
         </template>
       </v-navigation-drawer>
+    <!-- Header bar -->
+    <v-app-bar app dark clipped-left>
+      <v-btn text icon @click.stop="drawer = !drawer" class="d-lg-none">
+        <v-icon>mdi-menu</v-icon>
+      </v-btn>
+      <div>
+        <img src="./assets/NeuerEnergy_Logotype-white.png" height="40px" />
+      </div>
+      <v-spacer></v-spacer>
+      <!-- ADD IN CLIENT NAME COMPONENT OR PULL FROM DATABASE -->
+      <v-app-bar-title class="text-center">
+        <h2>{{ client.name }}</h2>
+      </v-app-bar-title>
+      <v-spacer></v-spacer>
+      <v-btn @click="toggleTheme" text class="mr-2">
+        <v-icon>mdi-brightness-6</v-icon>
+      </v-btn>
+      <v-menu offset-y>
+        <template v-slot:activator="{ on }">
+          <v-btn icon v-on="on">
+            <v-icon>mdi-bell</v-icon>
+          </v-btn>
+        </template>
+        <v-list>
+          <v-list-item v-for="(menuItem, index) in menuItems" :key="index" :to="menuItem.url">
+            <v-list-item-icon>
+              <v-icon>{{ menuItem.icon }}</v-icon>
+            </v-list-item-icon>
+            <v-list-item-title>{{ menuItem.title }}</v-list-item-title>
+          </v-list-item>
+        </v-list>
+      </v-menu>
+    </v-app-bar>
+    <v-content>
       <!-- Main content router view -->
       <router-view></router-view>
     </v-content>
@@ -96,6 +98,7 @@
           :direction="direction"
           :open-on-hover="hover"
           :transition="transition"
+          
         >
           <template v-slot:activator>
             <v-btn v-model="fab" color="secondary" fab>
