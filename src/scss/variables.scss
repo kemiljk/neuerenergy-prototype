@@ -1,0 +1,22 @@
+@mixin Inter($weight, $style, $fontWeight: 400, $fontStyle: normal) {
+    @font-face {
+        font-family: "Roboto Condensed";
+        src: url('/src/fonts/Inter-#{$weight}#{$style}.otf');
+        font-weight: $fontWeight;
+        font-style: $fontStyle;
+    }
+}
+
+@include Inter($weight: Regular, $style: "");
+@include Inter($weight: Bold, $style: "");
+@include Inter($weight: Bold, $style: Italic);
+@include Inter($weight: "", $style: Italic);
+@include Inter($weight: Light, $style: "");
+@include Inter($weight: Light, $style: Italic);
+
+$body-font-family: "Inter", sans-serif !important;
+$heading-font-family: "Inter", sans-serif !important;
+$material-light: (
+  'background': #eee
+);
+$border-radius-root: 8px !default;
