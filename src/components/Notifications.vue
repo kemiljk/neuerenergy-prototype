@@ -1,5 +1,5 @@
 <template>
-  <v-container>
+  <v-container class="py-0">
     <v-row>
       <v-col cols="10">
       <v-card-text class="body-2 grey--text py-0">
@@ -8,8 +8,8 @@
       <v-card-text class="body-1 font-weight-bold">
       {{ notification.description }}
       </v-card-text>
-      <v-card-text class="body-2 grey--text py-0">
-      {{ notification.assignee }}
+      <v-card-text class="body-2 grey--text py-0 mb-4">
+      {{ notification.details }}
       </v-card-text>
       </v-col>
       <v-col cols="2" align-items="center" class="mx-auto my-auto">
@@ -19,9 +19,9 @@
             >
               mdi-chevron-right
             </v-icon>
-          </v-btn>
-        </v-col>
-      </v-row>
+        </v-btn>
+      </v-col>
+    </v-row>
       <v-divider></v-divider>
   </v-container>
 </template>
