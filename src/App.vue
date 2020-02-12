@@ -12,7 +12,7 @@
         bottom
         clipped
       >
-        <v-list dense nav class="py-0">
+        <v-list dense nav class="py-1">
           <v-list-item two-line :class="miniVariant && 'px-0'" to="profile">
             <v-list-item-avatar>
               <img src="https://randomuser.me/api/portraits/men/11.jpg" />
