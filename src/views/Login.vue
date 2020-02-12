@@ -3,6 +3,7 @@
     <v-row class="mt-8">
       <v-col cols="12">
         <h1>Login</h1>
+        <!-- INSERT AUTH0 CODE HERE -->
       </v-col>
     </v-row>
   </v-container>

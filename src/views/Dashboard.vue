@@ -6,7 +6,7 @@
       </v-col>
       <v-col cols="2" align-self="end">
         <div class="text-right">
-          <v-btn class="secondary">
+          <v-btn class="secondary" to="/workflow">
             <v-icon class="mr-4">mdi-star</v-icon>
             New goal
           </v-btn>
