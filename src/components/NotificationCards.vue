@@ -1,9 +1,15 @@
 <template>
     <v-card
         >
-        <v-card-title 
+        <v-card-title cols="8" 
         class="font-weight-bold grey">
+        <div>
         {{ notificationCard.headline }}
+        </div>
+        <v-spacer></v-spacer>
+        <div>
+        <v-btn class="mx-auto">See more</v-btn>
+        </div>
         </v-card-title>
         <v-row>
             <v-col cols="12" v-for="notification in notifications" :key="`${notification.id}`">
