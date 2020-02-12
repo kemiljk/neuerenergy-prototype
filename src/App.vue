@@ -16,8 +16,8 @@
       </v-btn>
       <v-menu offset-y>
         <template v-slot:activator="{ on }">
-          <v-btn icon color="primary" v-on="on">
-            <v-icon>mdi-dots-vertical</v-icon>
+          <v-btn icon v-on="on">
+            <v-icon>mdi-bell</v-icon>
           </v-btn>
         </template>
         <v-list>
