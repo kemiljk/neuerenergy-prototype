@@ -75,6 +75,10 @@ export default {
         {
           id: 1,
           headline: "In-Negotiation PPAs",
+        },
+        {
+          id: 2,
+          headline: "In-Life PPAs",
         }
       ]
     };

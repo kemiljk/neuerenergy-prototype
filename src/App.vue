@@ -10,6 +10,9 @@
       </div>
       <v-spacer></v-spacer>
       <!-- ADD IN CLIENT NAME COMPONENT OR PULL FROM DATABASE -->
+      <v-app-bar-title class="text-center">
+        <h2>{{ client.name }}</h2>
+      </v-app-bar-title>
       <v-spacer></v-spacer>
       <v-btn @click="toggleTheme" text class="mr-2">
         <v-icon>mdi-brightness-6</v-icon>
@@ -69,13 +72,13 @@
         <template v-slot:append>
           <div>
             <v-list dense nav class="py-0">
-            <v-list-item v-for="(menuItem, index) in menuItems" :key="index" :to="menuItem.url">
-              <v-list-item-icon>
-                <v-icon>{{ menuItem.icon }}</v-icon>
-              </v-list-item-icon>
-              <v-list-item-title>{{ menuItem.title }}</v-list-item-title>
-            </v-list-item>
-          </v-list>
+              <v-list-item v-for="(menuItem, index) in menuItems" :key="index" :to="menuItem.url">
+                <v-list-item-icon>
+                  <v-icon>{{ menuItem.icon }}</v-icon>
+                </v-list-item-icon>
+                <v-list-item-title>{{ menuItem.title }}</v-list-item-title>
+              </v-list-item>
+            </v-list>
           </div>
         </template>
       </v-navigation-drawer>
@@ -95,11 +98,7 @@
           :transition="transition"
         >
           <template v-slot:activator>
-            <v-btn
-              v-model="fab"
-              color="secondary"
-              fab
-            >
+            <v-btn v-model="fab" color="secondary" fab>
               <v-icon v-if="fab">mdi-close</v-icon>
               <v-icon v-else>mdi-chat</v-icon>
             </v-btn>
@@ -115,6 +114,9 @@ export default {
   name: "App",
   data() {
     return {
+      client: {
+        name: "adidas"
+      },
       login: {
         url: "/login"
       },
@@ -129,13 +131,17 @@ export default {
         { title: "Sites", icon: "mdi-map-marker", url: "/sites" },
         { title: "Analysis", icon: "mdi-tune", url: "/analysis" },
         { title: "Generators", icon: "mdi-city", url: "/generators" },
-        { title: "Inbox", icon: "mdi-email", url: "/inbox" },
+        { title: "Inbox", icon: "mdi-email", url: "/inbox" }
       ],
       color: "dark",
       colors: ["primary", "secondary"],
       menuItems: [
         { title: "Support", icon: "mdi-face-agent", url: "/support" },
-        { title: "Company Profile", icon: "mdi-domain", url: "/company-profile" },
+        {
+          title: "Company Profile",
+          icon: "mdi-domain",
+          url: "/company-profile"
+        },
         { title: "Settings", icon: "mdi-cogs", url: "/settings" },
         { title: "Log out", icon: "mdi-logout-variant", url: "/logout" }
       ],
