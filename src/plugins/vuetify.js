@@ -19,6 +19,7 @@ export default new Vuetify({
                 palered: '#FAE8E8',
                 darkamber: '#9B6600',
                 paleamber: '#FEF3D0',
+                grey: '#CCCCCC',
             },
             dark: {
                 primary: '#FFDD05',
@@ -31,6 +32,7 @@ export default new Vuetify({
                 palered: '#B49F9F',
                 darkamber: '#9B6600',
                 paleamber: '#BAAF8B',
+                grey: '#333333',
             },
         },
     }

@@ -145,13 +145,6 @@ export default {
       background: false
     };
   },
-  computed: {
-    bg() {
-      return this.background
-        ? "https://cdn.vuetifyjs.com/images/backgrounds/bg-2.jpg"
-        : undefined;
-    }
-  },
   methods: {
     toggleTheme() {
       this.$vuetify.theme.dark = !this.$vuetify.theme.dark;
