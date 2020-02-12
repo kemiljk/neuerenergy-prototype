@@ -8,7 +8,7 @@
         <v-chip v-else-if="flag.action">ACTION</v-chip>-->
         <v-list-item-subtitle class="subtitle-2 pb-2">{{ notification.date }}</v-list-item-subtitle>
         <v-list-item-title class="subtitle-1 font-weight-bold py-2">{{ notification.description }}</v-list-item-title>
-        <v-list-item-subtitle class="body-1 pt-2">{{ notification.details }}</v-list-item-subtitle>
+        <v-list-item-subtitle class="body-1 py-2">{{ notification.details }}</v-list-item-subtitle>
       </v-col>
       <v-col cols="1" align-items="end" class="my-auto">
         <div class="text-center">

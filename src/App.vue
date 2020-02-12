@@ -67,19 +67,17 @@
       <v-btn @click="toggleTheme" text class="mr-2">
         <v-icon>mdi-brightness-6</v-icon>
       </v-btn>
-      <v-menu offset-y>
+      <v-menu offset-y max-width="400px">
         <template v-slot:activator="{ on }">
           <v-btn icon v-on="on">
             <v-icon>mdi-bell</v-icon>
           </v-btn>
         </template>
-        <v-card>
-        <v-list>
-          <v-list-item v-for="notification in notifications" :key="`${notification.id}`">
-            <Notifications :notification="notification" />
-          </v-list-item>
-        </v-list>
-        </v-card>
+          <v-list>
+            <v-list-item v-for="notification in notifications" :key="`${notification.id}`" class="px-0">
+              <Notifications :notification="notification" class="d-inline-block text-truncate" />
+            </v-list-item>
+          </v-list>
       </v-menu>
     </v-app-bar>
     <v-content>
