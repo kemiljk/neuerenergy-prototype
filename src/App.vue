@@ -19,8 +19,8 @@
             </v-list-item-avatar>
 
             <v-list-item-content>
-              <v-list-item-title>Harm Ohlmeyer</v-list-item-title>
-              <v-list-item-subtitle>Chief Financial Officer</v-list-item-subtitle>
+              <v-list-item-title>{{ profile.name }}</v-list-item-title>
+              <v-list-item-subtitle>{{ profile.title }}</v-list-item-subtitle>
             </v-list-item-content>
           </v-list-item>
 
@@ -119,6 +119,10 @@ export default {
     return {
       client: {
         name: "adidas"
+      },
+      profile: {
+        name: 'Harm Ohlmeyer',
+        title: 'Chief Financial Officer'
       },
       login: {
         url: "/login"
