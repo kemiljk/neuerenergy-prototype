@@ -7,16 +7,21 @@
     }
 }
 
-@include Inter($weight: Regular, $style: "");
-@include Inter($weight: Bold, $style: "");
-@include Inter($weight: Bold, $style: Italic);
-@include Inter($weight: "", $style: Italic);
-@include Inter($weight: Light, $style: "");
-@include Inter($weight: Light, $style: Italic);
-
-$body-font-family: "Inter", sans-serif !important;
-$heading-font-family: "Inter", sans-serif !important;
-$material-light: (
-  'background': #eee
-);
+@include Inter($weight: Regular,
+$style: "");
+@include Inter($weight: Bold,
+$style: "");
+@include Inter($weight: Bold,
+$style: Italic);
+@include Inter($weight: "",
+$style: Italic);
+@include Inter($weight: Light,
+$style: "");
+@include Inter($weight: Light,
+$style: Italic);
+$body-font-family: "Inter",
+sans-serif !important;
+$heading-font-family: "Inter",
+sans-serif !important;
+$material-light: ( 'background': #eee);
 $border-radius-root: 8px !default;
