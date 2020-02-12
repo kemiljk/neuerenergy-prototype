@@ -2,10 +2,9 @@
   <v-app>
     <!-- Header bar -->
     <v-app-bar app dark>
-      <!-- 
-      <v-btn @click="null" text>
+      <v-btn text icon @click.stop="drawer = !drawer" class="d-lg-none">
         <v-icon>mdi-menu</v-icon>
-      </v-btn>-->
+      </v-btn>
       <div>
         <img src="./assets/NeuerEnergy_Logotype-white.png" height="40px" />
       </div>
@@ -66,6 +65,19 @@
             </v-list-item-content>
           </v-list-item>
         </v-list>
+
+        <template v-slot:append>
+          <div>
+            <v-list>
+            <v-list-item v-for="(menuItem, index) in menuItems" :key="index" :to="menuItem.url">
+              <v-list-item-icon>
+                <v-icon>{{ menuItem.icon }}</v-icon>
+              </v-list-item-icon>
+              <v-list-item-title>{{ menuItem.title }}</v-list-item-title>
+            </v-list-item>
+          </v-list>
+          </div>
+        </template>
       </v-navigation-drawer>
       <!-- Main content router view -->
       <router-view></router-view>
@@ -118,12 +130,11 @@ export default {
         { title: "Analysis", icon: "mdi-tune", url: "/analysis" },
         { title: "Generators", icon: "mdi-city", url: "/generators" },
         { title: "Inbox", icon: "mdi-email", url: "/inbox" },
-        { title: "Support", icon: "mdi-help-box", url: "/support" }
       ],
       color: "dark",
       colors: ["primary", "secondary"],
       menuItems: [
-        { title: "Profile", icon: "mdi-account-box", url: "/profile" },
+        { title: "Support", icon: "mdi-face-agent", url: "/support" },
         { title: "Company Profile", icon: "mdi-domain", url: "/company-profile" },
         { title: "Settings", icon: "mdi-cogs", url: "/settings" },
         { title: "Log out", icon: "mdi-logout-variant", url: "/logout" }

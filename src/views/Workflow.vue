@@ -27,11 +27,18 @@ export default {
       workflows: [
             {
             id: 1,
-            headline: "Template",
+            headline: "Custom",
             subheadline: "Last updated: ",
             updateDate: "11 Feb 2020",
             workflow: "#"
             },
+            {
+            id: 2,
+            headline: "Templates",
+            subheadline: "Last updated: ",
+            updateDate: "11 Feb 2020",
+            workflow: "#"
+            }
         ]
     }
   }
