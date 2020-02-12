@@ -19,7 +19,7 @@
             </v-list-item-avatar>
 
             <v-list-item-content>
-              <v-list-item-title>James Dean</v-list-item-title>
+              <v-list-item-title>Harm Ohlmeyer</v-list-item-title>
               <v-list-item-subtitle>Chief Financial Officer</v-list-item-subtitle>
             </v-list-item-content>
           </v-list-item>
@@ -59,7 +59,7 @@
         <img src="./assets/NeuerEnergy_Logotype-white.png" height="40px" />
       </div>
       <v-spacer></v-spacer>
-      <!-- ADD IN CLIENT NAME COMPONENT OR PULL FROM DATABASE -->
+      <!-- PULL FROM DATABASE -->
       <v-app-bar-title class="text-center">
         <h2>{{ client.name }}</h2>
       </v-app-bar-title>
