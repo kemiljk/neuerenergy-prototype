@@ -33,19 +33,22 @@ export default {
             id: 1,
             date: "12 Feb 2020",
             description: "PWR PPA • Added External Legal Counsel as Reviewer",
-            details: "Harry McCammond"
+            details: "Harry McCammond",
+            url: "/notifications/#"
             },
             {
             id: 2,
             date: "27th Oct 2019",
             description: "CLR PPA • Initiated by Harry McCammond on 23rd Dec 2019",
-            details: "Awaiting contract initiation with CLR"
+            details: "Awaiting contract initiation with CLR",
+            url: "/notifications/#"
             },
             {
             id: 3,
             date: "21st Nov 2019",
             description: "Contrast PPA • By Małgorzata Switoniak-Jabłonska",
-            details: "Needs further discussion"
+            details: "Needs further discussion",
+            url: "/notifications/#"
             },
             ]
         }
