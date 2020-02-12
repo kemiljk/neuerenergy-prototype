@@ -69,40 +69,50 @@
                 :error-messages="nameErrors"
                 label="Site title"
                 required
+                prepend-icon="mdi-subtitles"
                 @input="$v.name.$touch()"
                 @blur="$v.name.$touch()"
+                color="secondary"
               ></v-text-field>
               <v-text-field
                 v-model="name"
                 :error-messages="nameErrors"
                 label="Site location"
                 required
+                prepend-icon="mdi-map-marker"
                 @input="$v.name.$touch()"
                 @blur="$v.name.$touch()"
+                color="secondary"
               ></v-text-field>
               <v-text-field
                 v-model="name"
                 :error-messages="nameErrors"
                 label="Total carbon emissions (per annum)"
                 required
+                prepend-icon="mdi-weather-windy"
                 @input="$v.name.$touch()"
                 @blur="$v.name.$touch()"
+                color="secondary"
               ></v-text-field>
               <v-text-field
                 v-model="name"
                 :error-messages="nameErrors"
                 label="Total energy consumption (per annum)"
                 required
+                prepend-icon="mdi-lightbulb-on"
                 @input="$v.name.$touch()"
                 @blur="$v.name.$touch()"
+                color="secondary"
               ></v-text-field>
               <v-text-field
                 v-model="name"
                 :error-messages="nameErrors"
                 label="Total carbon footprint (per annum, if known)"
                 required
+                prepend-icon="mdi-cloud"
                 @input="$v.name.$touch()"
                 @blur="$v.name.$touch()"
+                color="secondary"
               ></v-text-field>
               <!-- <v-select
                 v-model="select"
