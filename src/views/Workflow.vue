@@ -15,6 +15,7 @@
 </template>
 
 <script>
+import { uuid } from '../utils'
 import Workflows from "../components/Workflows";
 
 export default {
@@ -26,14 +27,14 @@ export default {
     return {
       workflows: [
             {
-            id: 1,
+            id: uuid(),
             headline: "Custom",
             subheadline: "Last updated: ",
             updateDate: "11 Feb 2020",
             workflow: "#"
             },
             {
-            id: 2,
+            id: uuid(),
             headline: "Templates",
             subheadline: "Last updated: ",
             updateDate: "11 Feb 2020",

@@ -20,6 +20,7 @@
 </template>
 
 <script>
+import { uuid } from '../utils'
 import Notifications from "../components/Notifications"
 
 export default {
@@ -36,21 +37,21 @@ export default {
         return {
         notifications: [
             {
-            id: 1,
+            id: uuid(),
             date: "12 FEB 2020",
             description: "PWR PPA • Added External Legal Counsel as Reviewer",
             details: "Harry McCammond",
             url: "/notifications/#"
             },
             {
-            id: 2,
+            id: uuid(),
             date: "27 OCT 2019",
             description: "CLR PPA • Initiated by Harry McCammond on 23rd Dec 2019",
             details: "Awaiting contract initiation with CLR",
             url: "/notifications/#"
             },
             {
-            id: 3,
+            id: uuid(),
             date: "21 NOV 2019",
             description: "Contrast PPA • By Małgorzata Switoniak-Jabłonska",
             details: "Needs further discussion",

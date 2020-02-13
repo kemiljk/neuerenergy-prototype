@@ -38,6 +38,7 @@
 </template>
 
 <script>
+import { uuid } from '../utils'
 import Cards from "../components/Cards";
 import NotificationCards from "../components/NotificationCards";
 
@@ -51,33 +52,33 @@ export default {
     return {
       cards: [
         {
-          id: 1,
+          id: uuid(),
           headline: "Total MWh purchased",
           title: "17,419"
         },
         {
-          id: 2,
+          id: uuid(),
           headline: "Number of certificates received ",
           title: "16,695"
         },
         {
-          id: 3,
+          id: uuid(),
           headline: "Price savings to date",
           title: "$599,360"
         },
         {
-          id: 4,
+          id: uuid(),
           headline: "Tonnes of CO₂ saved to date",
           title: "5,970.10"
         }
       ],
       notificationCards: [
         {
-          id: 1,
+          id: uuid(),
           headline: "In-Negotiation PPAs",
         },
         {
-          id: 2,
+          id: uuid(),
           headline: "In-Life PPAs",
         }
       ]
