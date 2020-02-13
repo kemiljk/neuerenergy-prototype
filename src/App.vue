@@ -57,12 +57,12 @@
       <div>
         <img src="./assets/NeuerEnergy_Logotype-white.png" height="40px" />
       </div>
-      <v-spacer></v-spacer>
+      <v-spacer />
       <v-app-bar-title class="text-center">
       <!-- PULL FROM DATABASE -->
         <h2>{{ client.name }}</h2>
       </v-app-bar-title>
-      <v-spacer></v-spacer>
+      <v-spacer />
       <v-btn @click="toggleTheme" text class="mr-2">
         <v-icon>mdi-brightness-6</v-icon>
       </v-btn>
@@ -81,7 +81,7 @@
     </v-app-bar>
     <v-content>
       <!-- Main content router view -->
-      <router-view></router-view>
+      <router-view />
       <v-speed-dial
           v-model="fab"
           :top="top"
@@ -103,11 +103,7 @@
             </v-btn>
           </template>
         </v-speed-dial>
-      
     </v-content>
-<SpeedDialer></SpeedDialer>
-        
-
   </v-app>
 </template>
 

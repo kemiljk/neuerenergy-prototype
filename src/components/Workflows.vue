@@ -1,6 +1,6 @@
 <template>
     <v-card>
-        <v-card-title class="secondary--text font-weight-bold">
+        <v-card-title class="grey font-weight-bold">
             {{ workflow.headline }}
             <v-spacer></v-spacer>
             <v-text-field
@@ -12,11 +12,11 @@
                 color="secondary"
             ></v-text-field>
         </v-card-title>
-        <v-card-subtitle>
+        <v-card-subtitle class="grey">
             {{ workflow.subheadline }} – {{ workflow.updateDate }}
         </v-card-subtitle>
         <!-- INSERT URL TO WORKFLOW DETAILS PAGE -->
-        <v-data-table :headers="headers" :items="desserts" :search="search" hide-default-footer></v-data-table>
+        <v-data-table :headers="headers" :items="desserts" :search="search" hide-default-footer />
     </v-card>
 </template>
 
