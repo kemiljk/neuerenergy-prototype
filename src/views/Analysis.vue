@@ -1,29 +1,29 @@
 <template>
   <v-container>
     <v-row class="mt-8">
-      <v-col cols="6">
+      <v-col cols="12" md="6">
         <h1>Analysis</h1>
         <p class="body-1 mt-4">Adjust the sliders to change your CO₂ target reduction percentage and overall timeline to see the impact on your selection's energy consumption and price.</p>
       </v-col>
-      <v-col cols="3" v-for="card in cards" :key="`${card.id}`">
+      <v-col cols="12" md="3" v-for="card in cards" :key="`${card.id}`">
         <Cards :card="card" />
       </v-col>
     </v-row>
     <v-row>
-      <v-col cols="4" v-for="card in widgets" :key="`${card.id}`">
+      <v-col cols="12" md="4" v-for="card in widgets" :key="`${card.id}`">
         <Cards :card="card" />
       </v-col>
-      <v-col cols="4" v-for="card in sliders" :key="`${card.id}`">
+      <v-col cols="12" md="4" v-for="card in sliders" :key="`${card.id}`">
         <SliderCards :card="card" />
       </v-col>
     </v-row>
     <v-row>
-      <v-col cols="6" v-for="card in ppas" :key="`${card.id}`">
+      <v-col cols="12" md="6" v-for="card in ppas" :key="`${card.id}`">
         <PPASliderCards :card="card" />
       </v-col>
     </v-row>
     <v-row>
-      <v-col cols="6">
+      <v-col cols="12" md="6">
         <h2>On-site PPAs</h2>
         <p class="body-1">If you want to discuss the option of On-site PPAs, speak with one of our specialist advisors.</p>
       </v-col>
@@ -41,7 +41,7 @@
     </v-row>
     <v-row>
       <v-spacer />
-      <v-col cols="4" class="text-center">
+      <v-col cols="12" md="4" class="text-center">
         <h2 class="mb-4">Save your analysis profile</h2>
           <v-btn class="mr-2" outlined>
             <v-text>Reset</v-text>

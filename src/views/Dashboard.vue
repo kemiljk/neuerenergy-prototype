@@ -1,7 +1,7 @@
 <template>
   <v-container>
     <v-row class="mt-8" dense>
-      <v-col cols="10">
+      <v-col cols="12" md="10">
         <h1>Dashboard</h1>
       </v-col>
       <v-col cols="2" align-self="end">
