@@ -22,10 +22,10 @@ export default new Vuetify({
                 grey: '#DDDDDD',
             },
             dark: {
-                primary: '#FFDD05',
-                secondary: '#56bdf2',
+                primary: '#FFDD05', // brand yellow
+                secondary: '#56bdf2', // brand pale blue
                 accent: '#ccebfb',
-                error: '#b71c1c',
+                error: '#eb3e46',
                 success: '#1FB966',
                 palegreen: '#7C9F8A',
                 warning: '#C90000',
