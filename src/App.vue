@@ -130,8 +130,8 @@ export default {
         name: 'Harm Ohlmeyer',
         title: 'Chief Financial Officer'
       },
-      login: {
-        url: "/login"
+      signin: {
+        url: "/sign-in"
       },
       drawer: true,
       items: [
@@ -156,7 +156,7 @@ export default {
           url: "/company-profile"
         },
         { title: "Settings", icon: "mdi-cogs", url: "/settings" },
-        { title: "Log out", icon: "mdi-logout-variant", url: "/logout" }
+        { title: "Sign out", icon: "mdi-logout-variant", url: "/sign-out" }
       ],
       notifications: [
             {
