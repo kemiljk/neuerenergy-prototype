@@ -9,7 +9,6 @@
         :left="left"
         :src="bg"
         app
-        bottom
         clipped
       >
         <v-list dense nav class="py-1">
@@ -83,19 +82,19 @@
     <v-content>
       <!-- Main content router view -->
       <router-view></router-view>
-    </v-content>
-    <div app class="mr-2 mb-2">
-      <v-row justify="end" no-gutters>
-        <v-speed-dial
+      <v-speed-dial
           v-model="fab"
           :top="top"
-          :bottom="bottom"
-          :right="right"
+          
+          
           :left="left"
           :direction="direction"
           :open-on-hover="hover"
           :transition="transition"
-          
+          absolute="true"
+          bottom
+          right
+          fixed="true"
         >
           <template v-slot:activator>
             <v-btn v-model="fab" color="secondary" fab>
@@ -104,8 +103,11 @@
             </v-btn>
           </template>
         </v-speed-dial>
-      </v-row>
-    </div>
+      
+    </v-content>
+<SpeedDialer></SpeedDialer>
+        
+
   </v-app>
 </template>
 
