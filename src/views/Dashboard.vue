@@ -54,22 +54,22 @@ export default {
         {
           id: uuid(),
           headline: "Total MWh purchased",
-          title: "17,419"
+          title: "0"
         },
         {
           id: uuid(),
           headline: "Number of certificates received ",
-          title: "16,695"
+          title: "0"
         },
         {
           id: uuid(),
           headline: "Price savings to date",
-          title: "$599,360"
+          title: "$0"
         },
         {
           id: uuid(),
           headline: "Tonnes of CO₂ saved to date",
-          title: "5,970.10"
+          title: "0"
         }
       ],
       notificationCards: [

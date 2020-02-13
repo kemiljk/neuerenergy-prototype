@@ -14,7 +14,7 @@
         <v-list dense nav class="py-1">
           <v-list-item two-line :class="miniVariant && 'px-0'" to="profile">
             <v-list-item-avatar>
-              <img src="https://randomuser.me/api/portraits/men/11.jpg" />
+              <img src="https://randomuser.me/api/portraits/men/29.jpg" />
             </v-list-item-avatar>
 
             <v-list-item-content>
@@ -124,11 +124,11 @@ export default {
   data() {
     return {
       client: {
-        name: "adidas"
+        name: "My Company"
       },
       profile: {
-        name: 'Harm Ohlmeyer',
-        title: 'Chief Financial Officer'
+        name: 'Owen Maestro',
+        title: 'Chief Executive Officer'
       },
       signin: {
         url: "/sign-in"
