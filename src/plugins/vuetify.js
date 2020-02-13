@@ -19,7 +19,7 @@ export default new Vuetify({
                 palered: '#FAE8E8',
                 darkamber: '#9B6600',
                 paleamber: '#FEF3D0',
-                grey: '#CCCCCC',
+                grey: '#DDDDDD',
             },
             dark: {
                 primary: '#FFDD05',
