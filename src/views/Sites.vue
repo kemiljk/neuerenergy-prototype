@@ -133,8 +133,8 @@
                 @blur="$v.checkbox.$touch()"
               ></v-checkbox> -->
               <div class="text-center">
-                <v-btn class="secondary mr-4 mb-4" @click="submit">submit</v-btn>
-                <v-btn class="secondary mb-4" @click="clear">clear</v-btn>
+                <v-btn class="mr-4 mb-4" outlined @click="clear">reset</v-btn>
+                <v-btn class="secondary mb-4" @click="submit">submit</v-btn>
               </div>
             </form>
           </v-card>
