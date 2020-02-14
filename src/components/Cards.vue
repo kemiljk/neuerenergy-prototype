@@ -1,5 +1,5 @@
 <template>
-  <v-card hover>
+  <v-card>
     <v-card-title class="primary--text font-weight-bold">{{ card.headline }}</v-card-title>
     <v-divider></v-divider>
     <v-card-text class="mt-4 font-weight-bold display-2">{{ card.title }}</v-card-text>
