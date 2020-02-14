@@ -7,7 +7,7 @@
           style="border-radius: 8px;"
           max-width="150px"
         />
-        <p class="caption mt-4 mb-0 secondary--text">ADMINISTRATOR</p>
+        <p class="caption mt-4 mb-0 primary--text">ADMINISTRATOR</p>
         <p class="headline font-weight-black mt-2 mb-1">{{ profile.name }}</p>
         <p class="font-weight-medium">{{ profile.title }}</p>
         <v-btn class="mb-6">Edit profile</v-btn>
@@ -39,10 +39,7 @@ import TaskList from "../components/TaskList";
 
 export default {
   name: "Profile",
-  components: [
-    Cards,
-    TaskList
-  ],
+  components: [Cards, TaskList],
   data() {
     return {
       profile: {
@@ -56,8 +53,8 @@ export default {
           subheadline: "Last updated: ",
           updateDate: "11 Feb 2020",
           task: "#"
-        },
-      ],
+        }
+      ]
     };
   }
 };

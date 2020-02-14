@@ -5,17 +5,15 @@
       <v-col cols="4" class="text-center">
         <h1>Signed Out</h1>
         <p class="body-1 mt-4">You have been signed out.</p>
-        <v-btn class="secondary mt-8" to="/sign-in">
-          Sign in
-        </v-btn>
+        <v-btn class="primary mt-8" to="/sign-in">Sign in</v-btn>
       </v-col>
-    <v-spacer />
+      <v-spacer />
     </v-row>
   </v-container>
 </template>
 
 <script>
 export default {
-  name: "SignOut",
-}
+  name: "SignOut"
+};
 </script>
