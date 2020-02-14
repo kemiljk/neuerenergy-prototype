@@ -11,12 +11,17 @@
                 hide-details
                 color="secondary"
             ></v-text-field>
+            
         </v-card-title>
         <v-card-subtitle class="grey">
             {{ workflow.subheadline }} – {{ workflow.updateDate }}
         </v-card-subtitle>
         <!-- INSERT URL TO WORKFLOW DETAILS PAGE -->
-        <v-data-table :headers="headers" :items="desserts" :search="search" hide-default-footer />
+        <v-data-table :headers="headers" :items="desserts" :search="search" hide-default-footer>
+            <template v-slot:item.calories="{ item }">
+                <v-chip :color="getColor(item.calories)" dark>{{ item.calories }}</v-chip>
+            </template>
+        </v-data-table>
     </v-card>
 </template>
 
@@ -127,6 +132,13 @@ export default {
             },
             ],
         };
-    }
+    },
+    methods: {
+      getColor (calories) {
+        if (calories > 400) return 'red'
+        else if (calories > 200) return 'orange'
+        else return 'green'
+      },
+    },
 }
 </script>
