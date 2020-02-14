@@ -152,7 +152,7 @@ export default {
           icon: "mdi-domain",
           url: "/company-profile"
         },
-        { title: "Settings", icon: "mdi-cogs", url: "/settings" },
+        /* { title: "Settings", icon: "mdi-cogs", url: "/settings" }, */
         { title: "Sign out", icon: "mdi-logout-variant", url: "/sign-out" }
       ],
       notifications: [

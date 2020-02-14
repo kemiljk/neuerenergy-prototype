@@ -52,7 +52,7 @@ export default {
           headline: "Custom",
           subheadline: "Last updated: ",
           updateDate: "11 Feb 2020",
-          task: "#"
+          task: "/tasks/#"
         }
       ]
     };

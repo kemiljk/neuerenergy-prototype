@@ -33,13 +33,13 @@
       </v-col>
       <v-col>
         <v-btn class="primary">
-          <v-text class="black--text">Request a phone call</v-text>
+          <v-text>Request a phone call</v-text>
         </v-btn>
       </v-col>
       <v-spacer />
       <v-col>
         <v-btn class="primary">
-          <v-text class="black--text">Request an email</v-text>
+          <v-text>Request an email</v-text>
         </v-btn>
       </v-col>
     </v-row>
