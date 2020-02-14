@@ -8,9 +8,9 @@ export default new Vuetify({
         dark: false,
         themes: {
             light: {
-                primary: '#FFDD05',
-                secondary: '#1c475c',
-                accent: '#56bdf2',
+                primary: '#1c475c', // brand teal
+                secondary: '#FFDD05', // brand yellow
+                accent: '#56bdf2', // brand pale blue
                 error: '#650000',
                 success: '#4CAF50',
                 green: '#00662F',
@@ -22,10 +22,10 @@ export default new Vuetify({
                 grey: '#DDDDDD',
             },
             dark: {
-                primary: '#FFDD05',
-                secondary: '#56bdf2',
-                accent: '#56bdf2',
-                error: '#b71c1c',
+                primary: '#56bdf2', // brand pale blue
+                secondary: '#FFDD05', // brand yellow
+                accent: '#ccebfb',
+                error: '#eb3e46',
                 success: '#1FB966',
                 palegreen: '#7C9F8A',
                 warning: '#C90000',

@@ -4,16 +4,16 @@ import VueRouter from 'vue-router'
 Vue.use(VueRouter)
 
 const routes = [{
-        path: '/login',
-        name: 'Login',
+        path: '/sign-in',
+        name: 'Sign in',
         component: () =>
-            import ('../views/Login.vue')
+            import ('../views/SignIn.vue')
     },
     {
-        path: '/logout',
-        name: 'Logout',
+        path: '/sign-out',
+        name: 'Sign out',
         component: () =>
-            import ('../views/Logout.vue')
+            import ('../views/SignOut.vue')
     },
     {
         path: '/',
@@ -25,13 +25,13 @@ const routes = [{
         path: '/workflow',
         name: 'Workflow',
         component: () =>
-            import ('../views/WorkflowList.vue')
+            import ('../views/Workflow.vue')
     },
     {
-        path: '/workflow-details',
-        name: 'Workflow-details',
+        path: '/workflow-list',
+        name: 'Workflow-list',
         component: () =>
-            import ('../views/WorkflowDetails.vue')
+            import ('../views/WorkflowList.vue')
     },
     {
         path: '/sites',
@@ -86,7 +86,14 @@ const routes = [{
         name: 'Settings',
         component: () =>
             import ('../views/Settings.vue')
-    }
+    },
+    {
+        path: '/components',
+        name: 'Components',
+        component: () =>
+            import ('../views/Components.vue')
+    },
+
 ]
 
 const router = new VueRouter({

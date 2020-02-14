@@ -1,7 +1,7 @@
 <template>
     <v-card
         >
-        <v-card-title 
+        <v-card-title >
             Title
         </v-card-title>
         <v-card-subtitle>
