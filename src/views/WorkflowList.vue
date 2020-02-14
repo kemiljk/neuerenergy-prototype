@@ -17,7 +17,7 @@
             >
               <template v-slot:top>
                 <v-toolbar flat color="grey">
-                  <v-toolbar-title>My workflows</v-toolbar-title>
+                  <v-toolbar-title class="font-weight-bold">My workflows</v-toolbar-title>
                   <v-spacer />
                   <v-text-field
                     v-model="search"
