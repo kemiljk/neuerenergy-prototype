@@ -78,13 +78,13 @@ export default {
         {
           id: uuid(),
           headline: "Global CO₂ footprint",
-          title: "44,210",
+          title: "0",
           description: "Tonnes of CO₂ per year"
         },
         {
           id: uuid(),
           headline: "Energy consumption",
-          title: "67,396.80",
+          title: "0",
           description: "MWh per year"
         }
       ],
@@ -92,7 +92,7 @@ export default {
         {
           id: uuid(),
           headline: "Selected locations",
-          title: "Boston, Indiana, Portland",
+          title: "London",
           description: "21.9% of 44,210 Tonnes of CO₂ per year"
         }
       ],
@@ -114,12 +114,12 @@ export default {
         {
           id: uuid(),
           headline: "Virtual PPA",
-          value: " 2,089,300.80 USD"
+          value: "2,089,300.80 USD"
         },
         {
           id: uuid(),
           headline: "Sleeved PPA",
-          value: " 3,369,840.00 USD",
+          value: "3,369,840.00 USD",
           description: "Ending in 2025"
         }
       ]
