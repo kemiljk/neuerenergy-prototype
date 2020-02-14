@@ -13,7 +13,6 @@ export default new Vuetify({
                 accent: '#56bdf2', // brand pale blue
                 error: '#650000',
                 success: '#4CAF50',
-                green: '#00662F',
                 palegreen: '#E5F1EA',
                 warning: '#C90000',
                 palered: '#FAE8E8',
