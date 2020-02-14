@@ -22,10 +22,10 @@
           <v-col
           cols="12"
           md="6"
-          v-for="notificationCard in notificationCards"
-          :key="`${notificationCard.id}`"
+          v-for="card in notificationCards"
+          :key="`${card.id}`"
           >
-          <NotificationCards :notificationCard="notificationCard" />
+          <NotificationCards :card="card" />
           </v-col>
         </v-row>
       </v-col>
@@ -34,8 +34,8 @@
       <v-col cols="12">
         <h2>Slider Cards</h2>
         <v-row>
-          <v-col cols="12" md="4" v-for="card in sliders" :key="`${card.id}`">
-            <SliderCards :card="card" />
+          <v-col cols="12" md="4" v-for="slider in sliders" :key="`${slider.id}`">
+            <SliderCards :slider="slider" />
           </v-col>
         </v-row>
       </v-col>

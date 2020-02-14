@@ -16,8 +16,8 @@
       <v-col cols="12" md="8">
         <h2>Recent activity</h2>
         <v-row>
-          <v-col cols="12" md="8" v-for="task in tasks" :key="`${task.id}`">
-            <TaskList :task="task" />
+          <v-col cols="12" md="8" v-for="card in tasks" :key="`${card.id}`">
+            <TaskList :card="card" />
           </v-col>
         </v-row>
       </v-col>
@@ -46,6 +46,14 @@ export default {
         name: "Owen Maestro",
         title: "Chief Executive Officer"
       },
+      cards: [
+        {
+          id: uuid(),
+          headline: "Global CO₂ footprint",
+          title: "0",
+          description: "Tonnes of CO₂ per year"
+        },
+      ],
       tasks: [
         {
           id: uuid(),
