@@ -15,11 +15,6 @@
       </v-col>
       <v-col cols="12" md="8">
         <h2>Recent activity</h2>
-        <v-row>
-          <v-col cols="12" md="8" v-for="card in tasks" :key="`${card.id}`">
-            <TaskList :card="card" />
-          </v-col>
-        </v-row>
       </v-col>
     </v-row>
     <v-row>
@@ -35,11 +30,10 @@
 <script>
 import { uuid } from "../utils";
 import Cards from "../components/Cards";
-import TaskList from "../components/TaskList";
 
 export default {
   name: "Profile",
-  components: [Cards, TaskList],
+  components: [Cards],
   data() {
     return {
       profile: {
@@ -54,15 +48,6 @@ export default {
           description: "Tonnes of CO₂ per year"
         },
       ],
-      tasks: [
-        {
-          id: uuid(),
-          headline: "Custom",
-          subheadline: "Last updated: ",
-          updateDate: "11 Feb 2020",
-          task: "/tasks/#"
-        }
-      ]
     };
   }
 };
