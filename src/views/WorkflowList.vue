@@ -72,13 +72,13 @@
               </template>
               <template v-slot:item.action="{ item }">
                 <v-btn text @click="editItem(item)" class="mr-6" icon>
-                  <v-icon small>mdi-pen</v-icon>
+                  <v-icon>mdi-pen</v-icon>
                 </v-btn>
-                <v-btn text @click="deleteItem(item)" class="mr-5" icon>
-                  <v-icon small>mdi-delete</v-icon>
+                <v-btn text @click="deleteItem(item)" class="mr-5" color="error" icon>
+                  <v-icon>mdi-delete</v-icon>
                 </v-btn>
-                <v-btn to="/workflow-details" icon>
-                  <v-icon>mdi-chevron-right</v-icon>
+                <v-btn to="/workflow-details" color="primary" icon>
+                  <v-icon large>mdi-chevron-right</v-icon>
                 </v-btn>
               </template>
               <template v-slot:no-data>
