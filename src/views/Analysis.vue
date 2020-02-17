@@ -6,6 +6,12 @@
         <p
           class="body-1 mt-4"
         >Adjust the sliders to change your CO₂ target reduction percentage and overall timeline to see the impact on your selection's energy consumption and price.</p>
+        <v-select
+          :items="items"
+          label="London"
+          solo
+          class="mt-8"
+        ></v-select>
       </v-col>
       <v-col cols="12" md="3" v-for="card in cards" :key="`${card.id}`">
         <Cards :card="card" />
@@ -127,7 +133,8 @@ export default {
           value: "3,369,840.00 USD",
           description: "Ending in 2025"
         }
-      ]
+      ],
+      items: ['London', 'Singapore', 'Germany'],
     };
   }
 };
