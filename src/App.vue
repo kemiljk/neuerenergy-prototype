@@ -4,13 +4,11 @@
     <v-navigation-drawer
       v-model="drawer"
       :color="color"
-      :expand-on-hover="expandOnHover"
-      :mini-variant="miniVariant"
-      :disable-resize-watcher="disableResizeWatcher"
-      :disable-route-watcher="disableRouteWatcher"
+      enable-resize-watcher
       :left="left"
-      app
       clipped
+      app
+      :expand-on-hover="expandOnHover"
     >
       <v-list dense nav class="py-1">
         <v-list-item two-line :class="miniVariant && 'px-0'" to="profile">
@@ -50,7 +48,6 @@
         </div>
       </template>
     </v-navigation-drawer>
-    <!-- Header bar -->
     <v-app-bar app dark clipped-left>
       <v-btn text icon @click.stop="drawer = !drawer" class="d-lg-none">
         <v-icon>mdi-menu</v-icon>
@@ -60,6 +57,7 @@
       </div>
       <v-spacer />
       <v-app-bar-title class="text-center">
+        <!-- Header bar -->
         <!-- PULL FROM DATABASE -->
         <h2>{{ client.name }}</h2>
       </v-app-bar-title>
@@ -182,9 +180,7 @@ export default {
       ],
       right: false,
       miniVariant: true,
-      expandOnHover: true,
-      disableRouteWatcher: false,
-      disableResizeWatcher: true
+      expandOnHover: true
     };
   },
   methods: {
