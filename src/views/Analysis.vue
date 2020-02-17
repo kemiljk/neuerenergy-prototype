@@ -40,11 +40,11 @@
               class="body-1"
             >If you want to discuss the option of On-site PPAs, speak with one of our specialist advisors.</p>
             <v-row>
-              <v-btn class="primary ml-3 mt-4">
+              <v-btn class="primary ml-3 mt-4" href="tel:+442072422956">
                 <v-icon>mdi-phone</v-icon>
                 <v-text class="ml-3">Request a phone call</v-text>
               </v-btn>
-              <v-btn class="primary ml-3 mt-4">
+              <v-btn class="primary ml-3 mt-4" href="mailto:info@neuerenergy.com">
                 <v-icon>mdi-email</v-icon>
                 <v-text class="ml-3">Request an email</v-text>
               </v-btn>
