@@ -132,7 +132,7 @@ export default {
           description: "Ending in 2025"
         }
       ],
-      items: ['London', 'Singapore', 'Germany'],
+      items: ['London', 'Singapore', 'Germany', '+ New site'],
     };
   }
 };
