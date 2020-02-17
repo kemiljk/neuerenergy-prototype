@@ -94,7 +94,7 @@ export default {
         },
         {
           id: uuid(),
-          headline: "Global CO₂ footprint",
+          headline: "CO₂ footprint",
           title: "0",
           description: "Tonnes of CO₂ per year"
         },
