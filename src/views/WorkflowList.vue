@@ -16,7 +16,7 @@
               hide-default-footer
             >
               <template v-slot:top>
-                <v-toolbar flat color="grey">
+                <v-toolbar flat color="grey" class="br-top">
                   <v-toolbar-title class="font-weight-bold">My workflows</v-toolbar-title>
                   <v-spacer />
                   <v-text-field

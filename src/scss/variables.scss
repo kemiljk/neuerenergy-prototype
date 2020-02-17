@@ -25,3 +25,7 @@ $heading-font-family: "Inter",
 sans-serif !important;
 $material-light: ( 'background': #eee);
 $border-radius-root: 8px !default;
+
+.br-top {
+    border-radius:8px 8px 0 0;
+}
