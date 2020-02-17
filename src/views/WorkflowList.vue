@@ -46,16 +46,16 @@
                               <v-text-field v-model="editedItem.name" label="Workflow title"></v-text-field>
                             </v-col>
                             <v-col cols="12" sm="6" md="4">
+                              <v-text-field v-model="editedItem.protein" label="Location"></v-text-field>
+                            </v-col>
+                            <v-col cols="12" sm="6" md="4">
                               <v-text-field v-model="editedItem.calories" label="Consumption"></v-text-field>
                             </v-col>
                             <v-col cols="12" sm="6" md="4">
-                              <v-text-field v-model="editedItem.fat" label="a"></v-text-field>
+                              <v-text-field v-model="editedItem.fat" label="Emissions"></v-text-field>
                             </v-col>
                             <v-col cols="12" sm="6" md="4">
-                              <v-text-field v-model="editedItem.carbs" label="b"></v-text-field>
-                            </v-col>
-                            <v-col cols="12" sm="6" md="4">
-                              <v-text-field v-model="editedItem.protein" label="c"></v-text-field>
+                              <v-text-field v-model="editedItem.carbs" label="Footprint"></v-text-field>
                             </v-col>
                           </v-row>
                         </v-container>
@@ -74,7 +74,7 @@
                 <v-btn text @click="editItem(item)" class="mr-6" icon>
                   <v-icon small>mdi-pen</v-icon>
                 </v-btn>
-                <v-btn text @click="deleteItem(item)" class="mr-6" icon>
+                <v-btn text @click="deleteItem(item)" class="mr-5" icon>
                   <v-icon small>mdi-delete</v-icon>
                 </v-btn>
                 <v-btn to="/workflow-details" icon>
