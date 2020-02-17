@@ -30,28 +30,28 @@
         <PPASliderCards :card="card" />
       </v-col>
     </v-row>
-
-    <v-card>
+    
+    <v-card class="mt-3">
       <v-card-text>
-    <v-row>
-      <v-col cols="12">
-        <h2>On-site PPAs</h2>
-        <p
-          class="body-1"
-        >If you want to discuss the option of On-site PPAs, speak with one of our specialist advisors.</p>
         <v-row>
-          <v-btn class="primary ml-3 mt-4">
-            <v-icon>mdi-phone</v-icon>
-            <v-text class="ml-3">Request a phone call</v-text>
-          </v-btn>
-          <v-btn class="primary ml-3 mt-4">
-            <v-icon>mdi-email</v-icon>
-            <v-text class="ml-3">Request an email</v-text>
-          </v-btn>
+          <v-col cols="12">
+            <h2>On-site PPAs</h2>
+            <p
+              class="body-1"
+            >If you want to discuss the option of On-site PPAs, speak with one of our specialist advisors.</p>
+            <v-row>
+              <v-btn class="primary ml-3 mt-4">
+                <v-icon>mdi-phone</v-icon>
+                <v-text class="ml-3">Request a phone call</v-text>
+              </v-btn>
+              <v-btn class="primary ml-3 mt-4">
+                <v-icon>mdi-email</v-icon>
+                <v-text class="ml-3">Request an email</v-text>
+              </v-btn>
+            </v-row>
+          </v-col>
         </v-row>
-      </v-col>
-    </v-row>
-    </v-card-text>
+      </v-card-text>
     </v-card>
     
     <v-row class="mt-6">
