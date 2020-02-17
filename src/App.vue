@@ -26,7 +26,7 @@
 
         <v-list-item v-for="item in items" :key="item.title" link :to="item.url">
           <v-list-item-icon>
-            <v-icon>{{ item.icon }}</v-icon>
+            <v-icon color="primary">{{ item.icon }}</v-icon>
           </v-list-item-icon>
 
           <v-list-item-content>
