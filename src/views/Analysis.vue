@@ -24,26 +24,31 @@
         <PPASliderCards :card="card" />
       </v-col>
     </v-row>
+
+    <v-card>
+      <v-card-text>
     <v-row>
-      <v-col cols="12" md="6">
+      <v-col cols="12">
         <h2>On-site PPAs</h2>
         <p
           class="body-1"
         >If you want to discuss the option of On-site PPAs, speak with one of our specialist advisors.</p>
-      </v-col>
-      <v-col>
-        <v-btn class="primary">
-          <v-text>Request a phone call</v-text>
-        </v-btn>
-      </v-col>
-      <v-spacer />
-      <v-col>
-        <v-btn class="primary">
-          <v-text>Request an email</v-text>
-        </v-btn>
+        <v-row>
+          <v-btn class="primary ml-3 mt-4">
+            <v-icon>mdi-phone</v-icon>
+            <v-text class="ml-3">Request a phone call</v-text>
+          </v-btn>
+          <v-btn class="primary ml-3 mt-4">
+            <v-icon>mdi-email</v-icon>
+            <v-text class="ml-3">Request an email</v-text>
+          </v-btn>
+        </v-row>
       </v-col>
     </v-row>
-    <v-row>
+    </v-card-text>
+    </v-card>
+    
+    <v-row class="mt-6">
       <v-spacer />
       <v-col cols="12" md="4" class="text-center">
         <h2 class="mb-4">Save your analysis profile</h2>
