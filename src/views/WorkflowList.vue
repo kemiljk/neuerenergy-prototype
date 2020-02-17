@@ -71,8 +71,12 @@
                 </v-toolbar>
               </template>
               <template v-slot:item.action="{ item }">
-                <v-icon small class="mr-2" @click="editItem(item)">mdi-pen</v-icon>
-                <v-icon small @click="deleteItem(item)">mdi-delete</v-icon>
+                <v-btn text @click="editItem(item)" class="mr-6" icon>
+                  <v-icon small>mdi-pen</v-icon>
+                </v-btn>
+                <v-btn text @click="deleteItem(item)" class="mr-6" icon>
+                  <v-icon small>mdi-delete</v-icon>
+                </v-btn>
                 <v-btn to="/workflow-details" icon>
                   <v-icon>mdi-chevron-right</v-icon>
                 </v-btn>
@@ -87,6 +91,12 @@
     </v-row>
   </v-container>
 </template>
+
+<style>
+.v-application .text-start {
+  text-align: end !important;
+}
+</style>
 
 <script>
 export default {
