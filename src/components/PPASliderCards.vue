@@ -19,7 +19,7 @@
           hide-details
           single-line
           type="number"
-          style="width: 50px"
+          style="width: 75px"
         ></v-text-field>
       </template>
     </v-slider>
@@ -40,7 +40,7 @@
           hide-details
           single-line
           type="number"
-          style="width: 50px"
+          style="width: 75px"
         ></v-text-field>
       </template>
     </v-slider>
