@@ -10,7 +10,7 @@
       track-fill-color="primary"
       thumb-color="primary"
     ></v-slider>
-    <v-card-text class="mt-4 font-weight-bold display-2">{{ card.title }}</v-card-text>
+    <v-card-text class="mt-4 font-weight-medium display-2">{{ card.title }}</v-card-text>
     <v-card-text>{{ card.description }}</v-card-text>
   </v-card>
 </template>
