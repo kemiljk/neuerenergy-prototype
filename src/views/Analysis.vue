@@ -6,22 +6,22 @@
         <p
           class="body-1 mt-4"
         >Adjust the sliders to change your CO₂ target reduction percentage and overall timeline to see the impact on your selection's energy consumption and price.</p>
+      </v-col>
+      <v-col cols="12" md="6">
         <v-select
           :items="items"
           label="London"
           solo
-          class="mt-8"
         ></v-select>
       </v-col>
-      <v-col cols="12" md="3" v-for="card in cards" :key="`${card.id}`">
+    </v-row>
+    <v-row>
+      <v-col cols="12" md="4" v-for="card in cards" :key="`${card.id}`">
         <Cards :card="card" />
       </v-col>
     </v-row>
     <v-row>
-      <v-col cols="12" md="4" v-for="card in widgets" :key="`${card.id}`">
-        <Cards :card="card" />
-      </v-col>
-      <v-col cols="12" md="4" v-for="card in sliders" :key="`${card.id}`">
+      <v-col cols="12" md="6" v-for="card in sliders" :key="`${card.id}`">
         <SliderCards :card="card" />
       </v-col>
     </v-row>
@@ -88,6 +88,12 @@ export default {
       cards: [
         {
           id: uuid(),
+          headline: "Selected locations",
+          title: "London",
+          description: "21.9% of 44,210 Tonnes of CO₂ per year"
+        },
+        {
+          id: uuid(),
           headline: "Global CO₂ footprint",
           title: "0",
           description: "Tonnes of CO₂ per year"
@@ -97,14 +103,6 @@ export default {
           headline: "Energy consumption",
           title: "0",
           description: "MWh per year"
-        }
-      ],
-      widgets: [
-        {
-          id: uuid(),
-          headline: "Selected locations",
-          title: "London",
-          description: "21.9% of 44,210 Tonnes of CO₂ per year"
         }
       ],
       sliders: [
