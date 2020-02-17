@@ -7,7 +7,7 @@
       </v-col>
     </v-row>
     <v-row class="mt-4">
-      <v-col cols="6">
+      <v-col cols="12" md="6">
         <v-card>
           <v-card-title class="primary--text font-weight-bold">Upload files</v-card-title>
           <v-card-text>Upload spreadsheets, PDFs or other documents that include information about your sites.</v-card-text>
@@ -40,7 +40,7 @@
           </div>
         </v-card>
       </v-col>
-      <v-col cols="6">
+      <v-col cols="12" md="6">
         <v-card>
           <v-card-title class="primary--text font-weight-bold">Input data manually</v-card-title>
           <v-card-text>Initiate site setup by adding the site title, location, total carbon emissions, total energy consumption and carbon footprint (if known).</v-card-text>

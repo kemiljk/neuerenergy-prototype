@@ -6,8 +6,9 @@
       :color="color"
       :expand-on-hover="expandOnHover"
       :mini-variant="miniVariant"
+      :disable-resize-watcher="disableResizeWatcher"
+      :disable-route-watcher="disableRouteWatcher"
       :left="left"
-      :src="bg"
       app
       clipped
     >
@@ -182,7 +183,8 @@ export default {
       right: false,
       miniVariant: true,
       expandOnHover: true,
-      background: false
+      disableRouteWatcher: false,
+      disableResizeWatcher: true
     };
   },
   methods: {
