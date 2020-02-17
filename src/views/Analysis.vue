@@ -37,7 +37,7 @@
           <v-col cols="12">
             <h2>On-site PPAs</h2>
             <p
-              class="body-1"
+              class="body-1 mt-3"
             >If you want to discuss the option of On-site PPAs, speak with one of our specialist advisors.</p>
             <v-row>
               <v-btn class="primary ml-3 mt-4" href="tel:+442072422956">
