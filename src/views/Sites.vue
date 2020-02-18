@@ -1,12 +1,10 @@
 <template>
   <v-container>
     <v-row class="mt-8">
-      <v-col cols="12">
+      <v-col cols="12" md="6">
         <h1>Sites</h1>
         <h3>You haven't got any sites yet, add some data below to populate your system</h3>
       </v-col>
-    </v-row>
-    <v-row class="mt-4">
       <v-col cols="12" md="6">
         <v-card>
           <v-card-title class="primary--text font-weight-bold">Upload files</v-card-title>
@@ -16,7 +14,6 @@
             accept=".doc, .docx, .xls, .xlsx, .pdf"
             color="primary"
             counter
-            label="File input"
             multiple
             placeholder="Select your files"
             prepend-icon="mdi-paperclip"
@@ -24,11 +21,10 @@
             :show-size="1000"
             hover
             clearable
-            class="mt-4 mr-4 ml-2"
+            class="mr-4 ml-2"
           >
             <template v-slot:selection="{ index, text }">
               <v-chip v-if="index < 2" color="primary" dark label small>{{ text }}</v-chip>
-
               <span
                 v-else-if="index === 2"
                 class="overline grey--text text--darken-3 mx-2"
@@ -36,11 +32,20 @@
             </template>
           </v-file-input>
           <div class="text-center">
-            <v-btn class="primary ml-4 mb-4">Upload</v-btn>
+            <v-btn
+              :loading="loading"
+              :disabled="loading"
+              color="primary"
+              class="ma-2 white--text"
+              @click="loader = 'loading'"
+            >
+              Upload
+              <v-icon right dark>mdi-cloud-upload</v-icon>
+            </v-btn>
           </div>
         </v-card>
       </v-col>
-      <v-col cols="12" md="6">
+      <v-col cols="12">
         <v-card>
           <v-card-title class="primary--text font-weight-bold">Input data manually</v-card-title>
           <v-card-text>Initiate site setup by adding the site title, location, total carbon emissions, total energy consumption and carbon footprint (if known).</v-card-text>
@@ -118,6 +123,45 @@
   </v-container>
 </template>
 
+<style>
+  .custom-loader {
+    animation: loader 1s infinite;
+    display: flex;
+  }
+  @-moz-keyframes loader {
+    from {
+      transform: rotate(0);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  @-webkit-keyframes loader {
+    from {
+      transform: rotate(0);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  @-o-keyframes loader {
+    from {
+      transform: rotate(0);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  @keyframes loader {
+    from {
+      transform: rotate(0);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+</style>
+
 <script>
 import { validationMixin } from "vuelidate";
 import { required, maxLength } from "vuelidate/lib/validators";
@@ -131,16 +175,33 @@ export default {
     emissions: { required },
     consumption: { required }
   },
-  data: () => ({
+  data() {
+    return {
     files: [],
     name: "",
     location: "",
     emissions: "",
     consumption: "",
     price: "",
-    footprint: ""
-  }),
+    footprint: "",
+    loader: null,
+    loading: false,
+    loading2: false,
+    loading3: false,
+    loading4: false,
+    loading5: false,
+    }
+  },
+  watch: {
+      loader () {
+        const l = this.loader
+        this[l] = !this[l]
 
+        setTimeout(() => (this[l] = false), 3000)
+
+        this.loader = null
+      },
+    },
   computed: {
     nameErrors() {
       const errors = [];
