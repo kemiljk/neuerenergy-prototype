@@ -25,14 +25,23 @@
 </template>
 
 <script>
-import profileData from "../data/profileData";
 
 export default {
   name: "Profile",
+  mounted() {
+    this.getProfileData();
+  },
   data() {
     return {
-      profile: profileData,
+      profile: []
     };
+  },
+  methods: {
+    getProfileData: function () {
+      fetch("/data/profileData.json")
+        .then(response => response.json())
+        .then(data => (this.profile = data));
+    }
   }
 };
 </script>

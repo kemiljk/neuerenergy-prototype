@@ -45,17 +45,19 @@
 import { uuid } from "../utils";
 import Cards from "../components/Cards";
 import NotificationCards from "../components/NotificationCards";
-import dashboardSummaryCards from "../data/dashboardSummaryCards.json";
 
 export default {
   name: "Dashboard",
+  mounted() {
+    this.getDashboardSummaryCardsData();
+  },
   components: {
     Cards,
     NotificationCards
   },
   data() {
     return {
-      cards: dashboardSummaryCards,
+      cards: [],
       notificationCards: [
         {
           id: uuid(),
@@ -67,6 +69,13 @@ export default {
         }
       ]
     };
+  },
+  methods: {
+    getDashboardSummaryCardsData: function () {
+      fetch("/data/dashboardSummaryCards.json")
+        .then(response => response.json())
+        .then(data => (this.cards = data));
+    }
   }
 };
 </script>

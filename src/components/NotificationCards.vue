@@ -17,10 +17,12 @@
 
 <script>
 import Notifications from "../components/Notifications";
-import notificationsData from "../data/notificationsData";
 
 export default {
   name: "NotificationCards",
+  mounted() {
+    this.getNotificationsData();
+  },
   components: {
     Notifications
   },
@@ -31,8 +33,15 @@ export default {
   },
   data() {
     return {
-      notifications: notificationsData
+      notifications: []
     };
+  },
+  methods: {
+    getNotificationsData: function () {
+      fetch("/data/notificationsData.json")
+        .then(response => response.json())
+        .then(data => (this.notifications = data));
+    }
   }
 };
 </script>
