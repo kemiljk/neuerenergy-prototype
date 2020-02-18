@@ -25,14 +25,10 @@
 </template>
 
 <script>
-import NotificationCards from "../components/NotificationCards";
 import profileData from "../data/profileData";
 
 export default {
   name: "Profile",
-  components: {
-    NotificationCards
-  },
   data() {
     return {
       profile: profileData,
