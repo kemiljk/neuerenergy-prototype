@@ -45,6 +45,7 @@
 import { uuid } from "../utils";
 import Cards from "../components/Cards";
 import NotificationCards from "../components/NotificationCards";
+import dashboardSummaryCards from "../data/dashboardSummaryCards.json";
 
 export default {
   name: "Dashboard",
@@ -54,28 +55,7 @@ export default {
   },
   data() {
     return {
-      cards: [
-        {
-          id: uuid(),
-          headline: "Total MWh purchased",
-          title: "0"
-        },
-        {
-          id: uuid(),
-          headline: "Number of certificates received ",
-          title: "0"
-        },
-        {
-          id: uuid(),
-          headline: "Price savings to date",
-          title: "$0"
-        },
-        {
-          id: uuid(),
-          headline: "Tonnes of CO₂ saved to date",
-          title: "0"
-        }
-      ],
+      cards: dashboardSummaryCards,
       notificationCards: [
         {
           id: uuid(),

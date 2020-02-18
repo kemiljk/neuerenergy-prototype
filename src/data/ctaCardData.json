@@ -1,0 +1,11 @@
+[
+  {
+    "id": "uuid()",
+    "headline": "On-site PPAs",
+    "text": "If you want to discuss the option of On-site PPAs, speak with one of our specialist advisors.",
+    "icon": "mdi-phone",
+    "cta": "Request a phone call",
+    "icon2": "mdi-email",
+    "cta2": "Request an email"
+  }
+]

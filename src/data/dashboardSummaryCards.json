@@ -1,0 +1,22 @@
+[
+  {
+          "id": "uuid()",
+          "headline": "Total MWh purchased",
+          "title": "0"
+  },
+  {
+          "id": "uuid()",
+          "headline": "Number of certificates received ",
+          "title": "0"
+  },
+  {
+          "id": "uuid()",
+          "headline": "Price savings to date",
+          "title": "$0"
+  },
+  {
+          "id": "uuid()",
+          "headline": "Tonnes of CO₂ saved to date",
+          "title": "0"
+  }
+]

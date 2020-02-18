@@ -1,7 +1,7 @@
 <template>
   <v-container>
     <v-row class="mt-8">
-      <v-col cols="12" md="4">
+      <v-col cols="12" md="4" v-for="profile in profile" :key="`${profile.id}`">
         <v-img
           src="https://randomuser.me/api/portraits/men/29.jpg"
           style="border-radius: 8px;"
@@ -16,26 +16,17 @@
           <v-col cols="12">
             <p class="title font-weight-black">Organisation</p>
             <v-icon>mdi-account-box-multiple-outline</v-icon>
-            <span class="body-1 ml-2">My Company</span>
+            <span class="body-1 ml-2">{{ profile.organisation }}</span>
           </v-col>
         </v-row>
-      </v-col>
-      <v-col 
-        cols="12"
-        md="8"
-        v-for="notificationCard in notificationCards"
-        :key="`${notificationCard.id}`"
-      >
-        <h2 class="mb-4">Recent activity</h2>
-        <NotificationCards :notificationCard="notificationCard" />
       </v-col>
     </v-row>
   </v-container>
 </template>
 
 <script>
-import { uuid } from "../utils";
 import NotificationCards from "../components/NotificationCards";
+import profileData from "../data/profileData";
 
 export default {
   name: "Profile",
@@ -44,16 +35,7 @@ export default {
   },
   data() {
     return {
-      profile: {
-        name: "Owen Maestro",
-        title: "Chief Executive Officer"
-      },
-      notificationCards: [
-        {
-          id: uuid(),
-          headline: "Something"
-        }
-      ]
+      profile: profileData,
     };
   }
 };

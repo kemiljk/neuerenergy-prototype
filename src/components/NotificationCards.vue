@@ -16,8 +16,8 @@
 </template>
 
 <script>
-import { uuid } from "../utils";
 import Notifications from "../components/Notifications";
+import notificationsData from "../data/notificationsData";
 
 export default {
   name: "NotificationCards",
@@ -31,30 +31,7 @@ export default {
   },
   data() {
     return {
-      notifications: [
-        {
-          id: uuid(),
-          date: "12 FEB 2020",
-          description: "PWR PPA • Added External Legal Counsel as Reviewer",
-          details: "Harry McCammond",
-          url: "/notifications/#"
-        },
-        {
-          id: uuid(),
-          date: "27 OCT 2019",
-          description:
-            "CLR PPA • Initiated by Harry McCammond on 23rd Dec 2019",
-          details: "Awaiting contract initiation with CLR",
-          url: "/notifications/#"
-        },
-        {
-          id: uuid(),
-          date: "21 NOV 2019",
-          description: "Contrast PPA • By Małgorzata Switoniak-Jabłonska",
-          details: "Needs further discussion",
-          url: "/notifications/#"
-        }
-      ]
+      notifications: notificationsData
     };
   }
 };
