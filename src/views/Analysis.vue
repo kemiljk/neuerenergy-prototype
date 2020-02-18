@@ -14,7 +14,7 @@
     <v-row>
       <v-col cols="12" md="4" v-for="card in cards" :key="`${card.id}`">
         <Cards :card="card" />
-      </v-col>
+    </v-col>
     </v-row>
     <v-row>
       <v-col cols="12" md="6" v-for="card in sliders" :key="`${card.id}`">
@@ -53,13 +53,15 @@ import Cards from "../components/Cards";
 import SliderCards from "../components/SliderCards";
 import PPASliderCards from "../components/PPASliderCards";
 import CtaCards from "../components/CtaCards";
-import analysisCardData from "../data/analysisCardData";
-import analysisSliderCardData from "../data/analysisSliderCardData";
-import analysisPpaCardData from "../data/analysisPpaCardData";
-import ctaCardData from "../data/ctaCardData";
 
 export default {
   name: "Analysis",
+  mounted() {
+    this.getAnalysisCardData();
+    this.getAnalysisSliderCardData();
+    this.getAnalysisPpaCardData();
+    this.getCtaCardData();
+  },
   components: {
     Cards,
     SliderCards,
@@ -68,12 +70,34 @@ export default {
   },
   data() {
     return {
-      cards: analysisCardData,
-      sliders: analysisSliderCardData,
-      ppas: analysisPpaCardData,
-      ctas: ctaCardData,
+      cards: [],
+      sliders: [],
+      ppas: [],
+      ctas: [],
       items: ["London", "Singapore", "Germany", "+ New site"]
-    };
+    }
+  },
+  methods: {
+    getAnalysisCardData: function () {
+      fetch("/data/analysisCardData.json")
+        .then(response => response.json())
+        .then(data => (this.cards = data));
+    },
+    getAnalysisSliderCardData: function () {
+      fetch("/data/analysisSliderCardData.json")
+        .then(response => response.json())
+        .then(data => (this.sliders = data));
+    },
+    getAnalysisPpaCardData: function () {
+      fetch("/data/analysisPpaCardData.json")
+        .then(response => response.json())
+        .then(data => (this.ppas = data));
+    },
+    getCtaCardData: function () {
+      fetch("/data/ctaCardData.json")
+        .then(response => response.json())
+        .then(data => (this.ctas = data));
+    },
   }
 };
 </script>
