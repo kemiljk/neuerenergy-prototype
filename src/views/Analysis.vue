@@ -30,29 +30,11 @@
         <PPASliderCards :card="card" />
       </v-col>
     </v-row>
-    
-    <v-card class="mt-3">
-      <v-card-text>
-        <v-row>
-          <v-col cols="12">
-            <h2>On-site PPAs</h2>
-            <p
-              class="body-1 mt-3"
-            >If you want to discuss the option of On-site PPAs, speak with one of our specialist advisors.</p>
-            <v-row>
-              <v-btn class="primary ml-3 mt-4" href="tel:+442072422956">
-                <v-icon>mdi-phone</v-icon>
-                <v-text class="ml-3">Request a phone call</v-text>
-              </v-btn>
-              <v-btn class="primary ml-3 mt-4" href="mailto:info@neuerenergy.com">
-                <v-icon>mdi-email</v-icon>
-                <v-text class="ml-3">Request an email</v-text>
-              </v-btn>
-            </v-row>
-          </v-col>
-        </v-row>
-      </v-card-text>
-    </v-card>
+    <v-row>
+      <v-col cols="12" v-for="card in ctas" :key="`${card.id}`">
+        <CtaCards :card="card" />
+      </v-col>
+    </v-row>
     
     <v-row class="mt-6">
       <v-spacer />
@@ -75,13 +57,15 @@ import { uuid } from "../utils";
 import Cards from "../components/Cards";
 import SliderCards from "../components/SliderCards";
 import PPASliderCards from "../components/PPASliderCards";
+import CtaCards from "../components/CtaCards";
 
 export default {
   name: "Analysis",
   components: {
     Cards,
     SliderCards,
-    PPASliderCards
+    PPASliderCards,
+    CtaCards
   },
   data() {
     return {
@@ -130,6 +114,17 @@ export default {
           headline: "Sleeved PPA",
           value: "3,369,840.00 USD",
           description: "Ending in 2025"
+        }
+      ],
+      ctas: [
+        {
+          id: uuid(),
+          headline: "On-site PPAs",
+          text: "If you want to discuss the option of On-site PPAs, speak with one of our specialist advisors.",
+          icon: "mdi-phone",
+          cta: "Request a phone call",
+          icon2: "mdi-email",
+          cta2: "Request an email"
         }
       ],
       items: ['London', 'Singapore', 'Germany', '+ New site'],
