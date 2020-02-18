@@ -7,6 +7,7 @@
       enable-resize-watcher
       :left="left"
       clipped
+      hide-overlay
       app
       :expand-on-hover="expandOnHover"
     >
