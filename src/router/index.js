@@ -52,10 +52,28 @@ const routes = [{
             import ('../views/Generators.vue')
     },
     {
+        path: '/contracts',
+        name: 'Contracts',
+        component: () =>
+            import ('../views/Contracts.vue')
+    },
+    {
         path: '/inbox',
         name: 'Inbox',
         component: () =>
             import ('../views/Inbox.vue')
+    },
+    {
+        path: '/to-do',
+        name: 'To-Do',
+        component: () =>
+            import ('../views/To-Do.vue')
+    },
+    {
+        path: '/reports',
+        name: 'Reports',
+        component: () =>
+            import ('../views/Reports.vue')
     },
     {
         path: '/notifications',

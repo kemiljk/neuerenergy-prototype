@@ -7,8 +7,8 @@
           class="body-1 mt-4"
         >Adjust the sliders to change your CO₂ target reduction percentage and overall timeline to see the impact on your selection's energy consumption and price.</p>
       </v-col>
-      <v-col cols="12" md="6">
-        <v-select :items="items" label="London" solo></v-select>
+      <v-col cols="12" md="6" v-for="site in sites" :key="`${site.site}`">
+        <v-select :site="site" label="London" solo></v-select>
       </v-col>
     </v-row>
     <v-row>
@@ -61,6 +61,7 @@ export default {
     this.getAnalysisSliderCardData();
     this.getAnalysisPpaCardData();
     this.getCtaCardData();
+    this.getSitesData();
   },
   components: {
     Cards,
@@ -74,7 +75,7 @@ export default {
       sliders: [],
       ppas: [],
       ctas: [],
-      items: ["London", "Singapore", "Germany", "+ New site"]
+      sites: []
     }
   },
   methods: {
@@ -97,6 +98,11 @@ export default {
       fetch("/data/ctaCardData.json")
         .then(response => response.json())
         .then(data => (this.ctas = data));
+    },
+    getSitesData: function () {
+      fetch("/data/sitesData.json")
+        .then(response => response.json())
+        .then(data => (this.sites = data));
     },
   }
 };
