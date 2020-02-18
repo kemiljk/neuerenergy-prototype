@@ -10,8 +10,8 @@
       app
       :expand-on-hover="expandOnHover"
     >
-      <v-list dense nav class="py-1">
-        <v-list-item two-line :class="miniVariant && 'px-0'" to="profile">
+      <v-list dense nav class="py-1" v-for="profile in profile" :key="`${profile.id}`">
+        <v-list-item two-line :class="miniVariant && 'px-0'" :to="'/profile'">
           <v-list-item-avatar>
             <img src="https://randomuser.me/api/portraits/men/29.jpg" />
           </v-list-item-avatar>
@@ -56,10 +56,10 @@
         <img src="./assets/NeuerEnergy_Logotype-white.png" height="40px" />
       </div>
       <v-spacer />
-      <v-app-bar-title class="text-center">
+      <v-app-bar-title class="text-center" v-for="profile in profile" :key="`${profile.id}`">
         <!-- Header bar -->
         <!-- PULL FROM DATABASE -->
-        <h2>{{ client.name }}</h2>
+        <h2>{{ profile.organisation }}</h2>
       </v-app-bar-title>
       <v-spacer />
       <v-btn @click="toggleTheme" text class="mr-2">
@@ -109,75 +109,28 @@
 </template>
 
 <script>
-import { uuid } from "./utils";
 import Notifications from "./components/Notifications";
 
 export default {
   name: "App",
+  mounted() {
+    this.getProfileData();
+    this.getNotificationsData();
+    this.getPagesData();
+    this.getSecondaryPagesData();
+  },
   components: {
     Notifications
   },
   data() {
     return {
-      client: {
-        name: "My Company"
-      },
-      profile: {
-        name: "Owen Maestro",
-        title: "Chief Executive Officer"
-      },
-      signin: {
-        url: "/sign-in"
-      },
+      profile: [],
       drawer: true,
-      items: [
-        {
-          title: "Dashboard",
-          icon: "mdi-view-dashboard",
-          url: "/"
-        },
-        { title: "Workflow", icon: "mdi-graph", url: "/workflow-list" },
-        { title: "Sites", icon: "mdi-map-marker", url: "/sites" },
-        { title: "Analysis", icon: "mdi-tune", url: "/analysis" },
-        { title: "Generators", icon: "mdi-city", url: "/generators" },
-        { title: "Inbox", icon: "mdi-email", url: "/inbox" }
-      ],
+      items: [],
       color: "dark",
       colors: ["primary", "primary"],
-      menuItems: [
-        { title: "Support", icon: "mdi-face-agent", url: "/support" },
-        {
-          title: "Company Profile",
-          icon: "mdi-domain",
-          url: "/company-profile"
-        },
-        /* { title: "Settings", icon: "mdi-cogs", url: "/settings" }, */
-        { title: "Sign out", icon: "mdi-logout-variant", url: "/sign-out" }
-      ],
-      notifications: [
-        {
-          id: uuid(),
-          date: "12 FEB 2020",
-          description: "PWR PPA • Added External Legal Counsel as Reviewer",
-          details: "Harry McCammond",
-          url: "/notifications/#"
-        },
-        {
-          id: uuid(),
-          date: "27 OCT 2019",
-          description:
-            "CLR PPA • Initiated by Harry McCammond on 23rd Dec 2019",
-          details: "Awaiting contract initiation with CLR",
-          url: "/notifications/#"
-        },
-        {
-          id: uuid(),
-          date: "21 NOV 2019",
-          description: "Contrast PPA • By Małgorzata Switoniak-Jabłonska",
-          details: "Needs further discussion",
-          url: "/notifications/#"
-        }
-      ],
+      menuItems: [],
+      notifications: [],
       right: false,
       miniVariant: true,
       expandOnHover: true
@@ -186,6 +139,26 @@ export default {
   methods: {
     toggleTheme() {
       this.$vuetify.theme.dark = !this.$vuetify.theme.dark;
+    },
+    getProfileData: function() {
+      fetch("../data/profileData.json")
+        .then(response => response.json())
+        .then(data => (this.profile = data));
+    },
+    getPagesData: function() {
+      fetch("../data/pagesData.json")
+        .then(response => response.json())
+        .then(data => (this.items = data));
+    },
+    getSecondaryPagesData: function() {
+      fetch("../data/pagesSecondaryData.json")
+        .then(response => response.json())
+        .then(data => (this.menuItems = data));
+    },
+    getNotificationsData: function () {
+      fetch("/data/notificationsData.json")
+        .then(response => response.json())
+        .then(data => (this.notifications = data));
     }
   }
 };
