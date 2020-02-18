@@ -90,8 +90,16 @@
               v-on:keypress="isNumber(event)"
             ></v-text-field>
             <v-text-field
+              v-model="price"
+              label="Total cost (per annum)"
+              prepend-icon="mdi-cash"
+              @input="$v.price.$touch()"
+              @blur="$v.price.$touch()"
+              color="primary"
+              v-on:keypress="isNumber(event)"
+            ></v-text-field>
+            <v-text-field
               v-model="footprint"
-              :error-messages="footprintErrors"
               label="Total carbon footprint (per annum, if known)"
               prepend-icon="mdi-cloud"
               @input="$v.footprint.$touch()"
@@ -129,6 +137,7 @@ export default {
     location: "",
     emissions: "",
     consumption: "",
+    price: "",
     footprint: ""
   }),
 
@@ -176,6 +185,7 @@ export default {
       this.location = "";
       this.emissions = "";
       this.consumption = "";
+      this.price = "";
       this.footprint = "";
     },
     isNumber: function(evt) {

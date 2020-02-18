@@ -7,14 +7,14 @@
           class="body-1 mt-4"
         >Adjust the sliders to change your CO₂ target reduction percentage and overall timeline to see the impact on your selection's energy consumption and price.</p>
       </v-col>
-      <v-col cols="12" md="6" v-for="site in sites" :key="`${site.site}`">
+      <v-col cols="12" md="6">
         <v-select :site="site" label="London" solo></v-select>
       </v-col>
     </v-row>
     <v-row>
       <v-col cols="12" md="4" v-for="card in cards" :key="`${card.id}`">
         <Cards :card="card" />
-    </v-col>
+      </v-col>
     </v-row>
     <v-row>
       <v-col cols="12" md="6" v-for="card in sliders" :key="`${card.id}`">
@@ -76,34 +76,34 @@ export default {
       ppas: [],
       ctas: [],
       sites: []
-    }
+    };
   },
   methods: {
-    getAnalysisCardData: function () {
+    getAnalysisCardData: function() {
       fetch("/data/analysisCardData.json")
         .then(response => response.json())
         .then(data => (this.cards = data));
     },
-    getAnalysisSliderCardData: function () {
+    getAnalysisSliderCardData: function() {
       fetch("/data/analysisSliderCardData.json")
         .then(response => response.json())
         .then(data => (this.sliders = data));
     },
-    getAnalysisPpaCardData: function () {
+    getAnalysisPpaCardData: function() {
       fetch("/data/analysisPpaCardData.json")
         .then(response => response.json())
         .then(data => (this.ppas = data));
     },
-    getCtaCardData: function () {
+    getCtaCardData: function() {
       fetch("/data/ctaCardData.json")
         .then(response => response.json())
         .then(data => (this.ctas = data));
     },
-    getSitesData: function () {
+    getSitesData: function() {
       fetch("/data/sitesData.json")
         .then(response => response.json())
         .then(data => (this.sites = data));
-    },
+    }
   }
 };
 </script>
