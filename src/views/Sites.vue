@@ -161,15 +161,12 @@ export default {
     emissionsErrors() {
       const errors = [];
       if (!this.$v.emissions.$dirty) return errors;
-      !this.$v.emissions.maxLength && errors.push("Emissions must be a number");
       !this.$v.emissions.required && errors.push("Emissions are required.");
       return errors;
     },
     consumptionErrors() {
       const errors = [];
       if (!this.$v.consumption.$dirty) return errors;
-      !this.$v.consumption.maxLength &&
-        errors.push("Consumption must be a number");
       !this.$v.consumption.required && errors.push("Consumption is required.");
       return errors;
     }
