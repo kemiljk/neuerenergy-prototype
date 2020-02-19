@@ -36,20 +36,8 @@
                 <v-card-text>
                   <v-container>
                     <v-row>
-                      <v-col cols="12" sm="6" md="4">
+                      <v-col cols="12">
                         <v-text-field v-model="editedItem.name" label="Workflow title"></v-text-field>
-                      </v-col>
-                      <v-col cols="12" sm="6" md="4">
-                        <v-text-field v-model="editedItem.protein" label="Location"></v-text-field>
-                      </v-col>
-                      <v-col cols="12" sm="6" md="4">
-                        <v-text-field v-model="editedItem.calories" label="Consumption"></v-text-field>
-                      </v-col>
-                      <v-col cols="12" sm="6" md="4">
-                        <v-text-field v-model="editedItem.fat" label="Emissions"></v-text-field>
-                      </v-col>
-                      <v-col cols="12" sm="6" md="4">
-                        <v-text-field v-model="editedItem.carbs" label="Footprint"></v-text-field>
                       </v-col>
                     </v-row>
                   </v-container>
@@ -67,10 +55,10 @@
         <v-row class="mt-8">
           <v-col cols="12">
             <v-data-table
-              :headers="headers"
-              :items="desserts"
+              :headers="myworkflowheaders"
+              :items="myworkflowdesserts"
               :search="search"
-              sort-by="calories"
+              sort-by="status"
               class="elevation-1"
               
             >
@@ -99,17 +87,17 @@
         <v-row class="mt-8">
           <v-col cols="12">
             <v-data-table
-              :headers="headers"
-              :items="desserts"
+              :headers="templateheaders"
+              :items="templatedesserts"
               :search="search"
-              sort-by="calories"
+              sort-by="category"
               class="elevation-1"
-              hide-default-header
+              :hide-default-header="false"
               hide-default-footer
             >
               <template v-slot:top>
                 <v-toolbar flat color="grey" class="br-top">
-                  <v-toolbar-title class="font-weight-bold">My workflows</v-toolbar-title>
+                  <v-toolbar-title class="font-weight-bold">Templates</v-toolbar-title>
                 </v-toolbar>
               </template>
               <template v-slot:item.action="{  }">
@@ -141,38 +129,29 @@
 export default {
   mounted() {
     this.getWorkflowListData();
+    this.getWorkflowTemplateListData();
   },
-
-
-
-
 
   data: () => ({
     search: "",
     dialog: false,
 
-    headers: [],
-    desserts: [],
+    myworkflowheaders: [],
+    myworkflowdesserts: [],
+    templateheaders: [],
+    templatedesserts: [],
     editedIndex: -1,
     editedItem: {
       name: "",
-      calories: 0,
-      fat: 0,
-      carbs: 0,
-      protein: 0
     },
     defaultItem: {
       name: "",
-      calories: 0,
-      fat: 0,
-      carbs: 0,
-      protein: 0
     }
   }),
 
   computed: {
     formTitle() {
-      return this.editedIndex === -1 ? "New Item" : "Edit Item";
+      return this.editedIndex === -1 ? "Create new workflow" : "Edit workflow title";
     }
   },
 
@@ -188,46 +167,60 @@ export default {
 
   methods: {
     initialize() {
-      this.desserts = [
+      this.myworkflowdesserts = [
         {
-          name: "AMERICAS",
-          calories: 159,
-          fat: 6.0,
-          carbs: 24,
-          protein: 4.0
+          name: "AMERICAS top 3 sites",
+          status: "At-sites",
+          profile: "Analysis",
+          carbs: 2,
+          protein: 1
         },
         {
           name: "EUROPE",
-          calories: 237,
-          fat: 9.0,
-          carbs: 37,
-          protein: 4.3
+          status: "Generator to sign",
+          profile: "Virtual PPA",
+          carbs: 2,
+          protein: 0
         },
         {
           name: "APAC",
-          calories: 262,
-          fat: 16.0,
-          carbs: 23,
-          protein: 6.0
+          status: "Contract review",
+          profile: "Sleeved PPA",
+          carbs: 1,
+          protein: 0
+        }
+      ];
+      this.templatedesserts = [
+        {
+          name: "Template 1",
+          category: "Analysis"
+        },
+        {
+          name: "Template 2",
+          category: "Virtual PPA"
+        },
+        {
+          name: "Template 3",
+          category: "Sleeved PPA"
         }
       ];
     },
     getWorkflowListData: function () {
       fetch("/data/workflowListData.json")
         .then(response => response.json())
-        .then(data => (this.headers = data));
+        .then(data => (this.myworkflowheaders = data));
     },
 
     editItem(item) {
-      this.editedIndex = this.desserts.indexOf(item);
+      this.editedIndex = this.myworkflowdesserts.indexOf(item);
       this.editedItem = Object.assign({}, item);
       this.dialog = true;
     },
 
     deleteItem(item) {
-      const index = this.desserts.indexOf(item);
+      const index = this.myworkflowdesserts.indexOf(item);
       confirm("Are you sure you want to delete this item?") &&
-        this.desserts.splice(index, 1);
+        this.myworkflowdesserts.splice(index, 1);
     },
 
     close() {
@@ -240,12 +233,18 @@ export default {
 
     save() {
       if (this.editedIndex > -1) {
-        Object.assign(this.desserts[this.editedIndex], this.editedItem);
+        Object.assign(this.myworkflowdesserts[this.editedIndex], this.editedItem);
       } else {
-        this.desserts.push(this.editedItem);
+        this.myworkflowdesserts.push(this.editedItem);
       }
       this.close();
-    }
+    },
+
+    getWorkflowTemplateListData: function () {
+      fetch("/data/workflowTemplateListData.json")
+        .then(response => response.json())
+        .then(data => (this.templateheaders = data));
+    },
   }
 };
 </script>

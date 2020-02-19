@@ -82,6 +82,12 @@ const routes = [{
             import ('../views/Reports.vue')
     },
     {
+        path: '/manage-people',
+        name: 'Manage People',
+        component: () =>
+            import ('../views/ManagePeople.vue')
+    },
+    {
         path: '/notifications',
         name: 'Notifications',
         component: () =>
