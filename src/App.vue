@@ -36,9 +36,9 @@
         </v-list-item>
       </v-list>
 
-      <template v-slot:append>
+      <!-- <template v-slot:append>
         <div>
-          <v-list dense nav class="py-0">
+          <v-list nav class="py-0">
             <v-list-item v-for="(menuItem, index) in menuItems" :key="index" :to="menuItem.url">
               <v-list-item-icon>
                 <v-icon>{{ menuItem.icon }}</v-icon>
@@ -47,7 +47,7 @@
             </v-list-item>
           </v-list>
         </div>
-      </template>
+      </template> -->
     </v-navigation-drawer>
     <v-app-bar app dark clipped-left>
       <v-btn text icon @click.stop="drawer = !drawer" class="d-lg-none">
@@ -63,9 +63,11 @@
         <h2>{{ profile.organisation }}</h2>
       </v-app-bar-title>
       <v-spacer />
+      <!-- Toggle for themes -->
       <v-btn @click="toggleTheme" text class="mr-2">
         <v-icon>mdi-brightness-6</v-icon>
       </v-btn>
+      <!-- Menu for notifications -->
       <v-menu offset-y max-width="400px">
         <template v-slot:activator="{ on }">
           <v-btn icon v-on="on">
@@ -79,6 +81,19 @@
             class="px-0"
           >
             <Notifications :notification="notification" class="d-inline-block text-truncate" />
+          </v-list-item>
+        </v-list>
+      </v-menu>
+      <!-- Menu for secondary actions -->
+      <v-menu bottom left offset-y>
+        <template v-slot:activator="{ on }">
+          <v-btn dark icon v-on="on">
+            <v-icon>mdi-dots-vertical</v-icon>
+          </v-btn>
+        </template>
+        <v-list>
+          <v-list-item v-for="(menuItem) in menuItems" :key="`${menuItem.id}`" :to="`${menuItem.url}`">
+            <v-list-item-title>{{ menuItem.title }}</v-list-item-title>
           </v-list-item>
         </v-list>
       </v-menu>
@@ -156,7 +171,7 @@ export default {
         .then(response => response.json())
         .then(data => (this.menuItems = data));
     },
-    getNotificationsData: function () {
+    getNotificationsData: function() {
       fetch("/data/notificationsData.json")
         .then(response => response.json())
         .then(data => (this.notifications = data));
