@@ -43,6 +43,13 @@
                   <v-card-title>
                     <span class="headline">{{ formTitle }}</span>
                   </v-card-title>
+        <template #checkbox>
+          <input
+            v-model="completedLocal"
+            type="checkbox"
+            class="checkbox"
+          >
+        </template>
 
                   <v-card-text>
                     <v-container>
@@ -147,6 +154,24 @@ export default {
   computed: {
     formTitle() {
       return this.editedIndex === -1 ? "New Item" : "Edit Item";
+    },
+    completedLocal: {
+      /**
+       * Transforms the completedAt timestamp to boolean
+       */
+      get () {
+        return !!this.item.completedAt
+      },
+      /**
+       * Converts the completedAt boolean to a timestamp
+       * Emits the entire changed item
+       * @param {Boolean} value
+       */
+      set (value) {
+        this.emitChange({
+          completedAt: value ? Date.now() : null
+        })
+      }
     }
   },
 
@@ -163,6 +188,12 @@ export default {
   methods: {
     initialize() {
       this.actions = [];
+    },
+    emitChange (updatedItem) {
+      this.$emit('change', {
+        ...this.item,
+        ...updatedItem
+      })
     },
     getActionsData: function() {
       fetch("/data/actionsData.json")
