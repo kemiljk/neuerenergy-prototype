@@ -1,4 +1,10 @@
-[{
+[
+    {
+        "title": "Manage people",
+        "icon": "mdi-account-group",
+        "url": "/manage-people"
+    },
+    {
         "title": "Dashboard",
         "icon": "mdi-view-dashboard",
         "url": "/"
@@ -37,10 +43,5 @@
         "title": "Reports",
         "icon": "mdi-chart-areaspline",
         "url": "/reports"
-    },
-    {
-        "title": "Manage people",
-        "icon": "mdi-account-group",
-        "url": "/manage-people"
     }
 ]
