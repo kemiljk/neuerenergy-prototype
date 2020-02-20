@@ -121,10 +121,7 @@
       <router-view />
       <v-speed-dial
         v-model="fab"
-        :top="top"
-        :left="left"
         :direction="direction"
-        :open-on-hover="hover"
         :transition="transition"
         absolute="true"
         bottom
@@ -137,6 +134,29 @@
             <v-icon v-else>mdi-chat</v-icon>
           </v-btn>
         </template>
+        <v-card class="mb-10" width="300px">
+          <v-list>
+            <v-list-item>
+            Hello, and welcome to NeuerEnergy. You can ask me any questions and I'll look for the best possible answer.
+            </v-list-item>
+          </v-list>
+          <template>
+            <v-form v-model="valid">
+              <v-container>
+                <v-row>
+                  <v-col
+                    cols="12"
+                  >
+                    <v-text-field
+                      v-model="question"
+                      label="Ask a question"
+                    ></v-text-field>
+                  </v-col>
+                </v-row>
+              </v-container>
+            </v-form>
+          </template>
+        </v-card>
       </v-speed-dial>
     </v-content>
   </v-app>
@@ -163,6 +183,7 @@ export default {
   },
   data() {
     return {
+      question: '',
       profile: [],
       drawer: true,
       items: [],
@@ -172,7 +193,8 @@ export default {
       notifications: [],
       right: false,
       miniVariant: true,
-      expandOnHover: true
+      expandOnHover: true,
+      direction: "left"
     };
   },
   methods: {

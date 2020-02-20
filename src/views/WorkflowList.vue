@@ -1,6 +1,6 @@
 <template>
   <v-container>
-    <v-row class="mt-8">
+    <v-row>
       <v-col cols="12">
         <v-row class="mt-8">
           <v-col cols="12" md="6">
