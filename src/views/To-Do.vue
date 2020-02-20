@@ -127,25 +127,19 @@ import { uuid } from "../utils";
 
 export default {
   name: "To-Do",
+  mounted() {
+    this.getActionsData();
+    this.getActionsHeaderData();
+    this.getItemsData();
+  },
   data: () => ({
     singleSelect: false,
     selected: [],
     search: "",
     dialog: false,
-    headers: [
-      {
-        text: "ACTION",
-        align: "left",
-        sortable: false,
-        value: "title"
-      },
-      { text: "DESCRIPTION", value: "task" },
-      { text: "DUE DATE", value: "date" },
-      { text: "STATUS", value: "status" },
-      { text: "ACTIONS", value: "action", sortable: false }
-    ],
+    headers: [],
     actions: [],
-    items: ["To-Do", "In-Progress", "Overdue", "Complete"],
+    items: [],
     editedIndex: -1,
     editedItem: {
       id: uuid(),
@@ -181,29 +175,22 @@ export default {
 
   methods: {
     initialize() {
-      this.actions = [
-        {
-          id: uuid(),
-          title: "Finish site setup",
-          task: "Complete walkthrough of onboarding",
-          date: "2020-02-19",
-          status: "In-Progress"
-        },
-        {
-          id: uuid(),
-          title: "Speak to PWR about contract",
-          task: "Phone Phil",
-          date: "2020-02-21",
-          status: "To-Do"
-        },
-        {
-          id: uuid(),
-          title: "Set up external reviewer",
-          task: "Revisit workflow and add new user",
-          date: "2020-03-01",
-          status: "To-Do"
-        }
-      ];
+      this.actions = [];
+    },
+    getActionsData: function() {
+      fetch("/data/actionsData.json")
+        .then(response => response.json())
+        .then(data => (this.actions = data));
+    },
+    getActionsHeaderData: function() {
+      fetch("/data/actionsHeaderData.json")
+        .then(response => response.json())
+        .then(data => (this.headers = data));
+    },
+    getItemsData: function() {
+      fetch("/data/actionsItemsData.json")
+        .then(response => response.json())
+        .then(data => (this.items = data));
     },
     getColor(status) {
       if (status === "Overdue") return "red";
