@@ -66,7 +66,6 @@
                                 v-model="editedItem.date"
                                 label="DUE DATE"
                                 prepend-icon="mdi-calendar"
-                                readonly
                                 v-on="on"
                               ></v-text-field>
                             </template>

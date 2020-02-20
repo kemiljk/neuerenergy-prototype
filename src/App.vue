@@ -105,13 +105,14 @@
           </v-btn>
         </template>
         <v-list>
+          <v-list-item @click="toggleTheme" icon class="mr-2">
+            <v-icon class="mr-4">mdi-brightness-6</v-icon> <v-text>{{ themeMode }}</v-text>
+          </v-list-item>
+          <v-divider />
           <v-list-item v-for="menuItem in menuItems" :key="`${menuItem.id}`" :to="`${menuItem.url}`">
             <v-icon class="mr-4">{{ menuItem.icon }}</v-icon> <v-list-item-title> {{ menuItem.title }}</v-list-item-title>
           </v-list-item>
           <!-- Toggle for themes -->
-          <v-list-item @click="toggleTheme" icon class="mr-2">
-            <v-icon class="mr-4">mdi-brightness-6</v-icon> <v-text>{{ themeMode }}</v-text>
-          </v-list-item>
         </v-list>
       </v-menu>
     </v-app-bar>
