@@ -1,20 +1,20 @@
 [  
   {
-    "id": "uuid()",
+    "id": 1,
     "title": "Finish site setup",
     "task": "Complete walkthrough of onboarding",
     "date": "2020-02-19",
     "status": "In-Progress"
   },
   {
-    "id": "uuid()",
+    "id": 2,
     "title": "Speak to PWR about contract",
     "task": "Phone Phil",
     "date": "2020-02-21",
     "status": "To-Do"
   },
   {
-    "id": "uuid()",
+    "id": 3,
     "title": "Set up external reviewer",
     "task": "Revisit workflow and add new user",
     "date": "2020-03-01",

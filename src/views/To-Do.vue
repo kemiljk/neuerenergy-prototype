@@ -82,7 +82,7 @@
                           <v-select
                             v-model="editedItem.status"
                             :items="items"
-                            label="To Do"
+                            label="To-Do"
                             solo
                           ></v-select>
                         </v-col>
@@ -123,7 +123,6 @@
 </template>
 
 <script>
-import { uuid } from "../utils";
 
 export default {
   name: "To-Do",
@@ -141,20 +140,8 @@ export default {
     actions: [],
     items: [],
     editedIndex: -1,
-    editedItem: {
-      id: uuid(),
-      title: "",
-      task: "",
-      date: "",
-      status: ""
-    },
-    defaultItem: {
-      id: uuid(),
-      title: "",
-      task: "",
-      date: "",
-      status: ""
-    }
+    editedItem: [],
+    defaultItem: [],
   }),
 
   computed: {
