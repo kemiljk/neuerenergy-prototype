@@ -141,6 +141,7 @@ export default {
     editedIndex: -1,
     editedItem: [],
     defaultItem: [],
+    modal: true
   }),
 
   computed: {
