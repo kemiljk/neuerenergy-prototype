@@ -106,7 +106,7 @@
             <v-btn text @click="deleteItem(item)" class="mr-5" color="error" icon>
               <v-icon>mdi-delete</v-icon>
             </v-btn>
-            <v-btn to="/workflow-details" color="primary" icon>
+            <v-btn to="/to-do/#id" color="primary" icon>
               <v-icon large>mdi-chevron-right</v-icon>
             </v-btn>
           </template>
