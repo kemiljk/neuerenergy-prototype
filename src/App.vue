@@ -83,7 +83,7 @@
       <!-- Menu for notifications -->
       <v-menu offset-y max-width="400px">
         <template v-slot:activator="{ on }">
-          <v-btn icon v-on="on">
+          <v-btn icon v-on="on" class="ml-2">
             <v-icon>mdi-bell</v-icon>
           </v-btn>
         </template>
@@ -100,7 +100,7 @@
       <!-- Menu for secondary actions -->
       <v-menu bottom left offset-y>
         <template v-slot:activator="{ on }">
-          <v-btn dark icon v-on="on">
+          <v-btn dark icon v-on="on" class="ml-2">
             <v-icon>mdi-dots-vertical</v-icon>
           </v-btn>
         </template>
@@ -134,16 +134,17 @@
             <v-icon v-else>mdi-chat</v-icon>
           </v-btn>
         </template>
-        <v-card class="mb-10" width="300px">
+        <template>
+        <v-card width="500px" >
           <v-list>
             <v-list-item>
             Hello, and welcome to NeuerEnergy. You can ask me any questions and I'll look for the best possible answer.
             </v-list-item>
           </v-list>
           <template>
-            <v-form v-model="valid">
+            <v-form>
               <v-container>
-                <v-row>
+                <v-row >
                   <v-col
                     cols="12"
                   >
@@ -157,6 +158,7 @@
             </v-form>
           </template>
         </v-card>
+        </template>
       </v-speed-dial>
     </v-content>
   </v-app>
@@ -194,7 +196,8 @@ export default {
       right: false,
       miniVariant: true,
       expandOnHover: true,
-      direction: "left"
+      direction: "top",
+      left: "left"
     };
   },
   methods: {
