@@ -48,16 +48,43 @@
                     <v-container>
                       <v-row>
                         <v-col cols="12" sm="6" md="6">
-                          <v-text-field v-model="editedItem.title" label="Action title"></v-text-field>
+                          <v-text-field v-model="editedItem.title" label="ACTION"></v-text-field>
                         </v-col>
                         <v-col cols="12" sm="6" md="6">
-                          <v-text-field v-model="editedItem.task" label="Task"></v-text-field>
+                          <v-text-field v-model="editedItem.task" label="DESCRIPTION"></v-text-field>
                         </v-col>
-                        <v-col cols="12" sm="6" md="6">
-                          <v-text-field v-model="editedItem.date" label="Due date"></v-text-field>
+                        <v-col cols="12" sm="12" md="12" class="text-center">
+                          <v-dialog
+                            ref="dialog"
+                            v-model="modal"
+                            :return-value.sync="editedItem.date"
+                            persistent
+                            width="290px"
+                          >
+                            <template v-slot:activator="{ on }">
+                              <v-text-field
+                                v-model="editedItem.date"
+                                label="DUE DATE"
+                                prepend-icon="mdi-calendar"
+                                readonly
+                                v-on="on"
+                              ></v-text-field>
+                            </template>
+                            <v-date-picker v-model="actions.date" scrollable>
+                              <v-spacer></v-spacer>
+                              <v-btn text color="primary" @click="modal = false">Cancel</v-btn>
+                              <v-btn text color="primary" @click="$refs.dialog.save(actions.date)">OK</v-btn>
+                            </v-date-picker>
+                          </v-dialog>
+       <!-- <v-text-field v-model="editedItem.date" label="Due date"></v-text-field> -->
                         </v-col>
-                        <v-col cols="12" sm="6" md="6">
-                          <v-text-field v-model="editedItem.status" label="Status"></v-text-field>
+                        <v-col cols="12" sm="12" md="12">
+                          <v-select
+                            v-model="editedItem.status"
+                            :items="items"
+                            label="To Do"
+                            solo
+                          ></v-select>
                         </v-col>
                       </v-row>
                     </v-container>
@@ -107,17 +134,18 @@ export default {
     dialog: false,
     headers: [
       {
-        text: "Task title",
+        text: "ACTION",
         align: "left",
         sortable: false,
         value: "title"
       },
-      { text: "Description", value: "task" },
-      { text: "Due Date", value: "date" },
-      { text: "Status", value: "status" },
-      { text: "Actions", value: "action", sortable: false }
+      { text: "DESCRIPTION", value: "task" },
+      { text: "DUE DATE", value: "date" },
+      { text: "STATUS", value: "status" },
+      { text: "ACTIONS", value: "action", sortable: false }
     ],
     actions: [],
+    items: ["To-Do", "In-Progress", "Overdue", "Complete"],
     editedIndex: -1,
     editedItem: {
       id: uuid(),
@@ -158,30 +186,30 @@ export default {
           id: uuid(),
           title: "Finish site setup",
           task: "Complete walkthrough of onboarding",
-          date: "19 Feb 2020",
-          status: "In Progress"
+          date: "2020-02-19",
+          status: "In-Progress"
         },
         {
           id: uuid(),
           title: "Speak to PWR about contract",
           task: "Phone Phil",
-          date: "25 Feb 2020",
-          status: "To Do"
+          date: "2020-02-21",
+          status: "To-Do"
         },
         {
           id: uuid(),
           title: "Set up external reviewer",
           task: "Revisit workflow and add new user",
-          date: "01 Mar 2020",
-          status: "To Do"
+          date: "2020-03-01",
+          status: "To-Do"
         }
       ];
     },
     getColor(status) {
       if (status === "Overdue") return "red";
-      else if (status === "In Progress") return "orange darken-3";
-      else if (status === "To Do") return "primary";
-      else return "green";
+      else if (status === "In-Progress") return "orange darken-3";
+      else if (status === "To-Do") return "primary";
+      else return "success";
     },
     editItem(item) {
       this.editedIndex = this.actions.indexOf(item);
@@ -192,7 +220,7 @@ export default {
     deleteItem(item) {
       const index = this.actions.indexOf(item);
       confirm("Are you sure you want to delete this item?") &&
-        this.desserts.splice(index, 1);
+        this.actions.splice(index, 1);
     },
 
     close() {
@@ -205,7 +233,7 @@ export default {
 
     save() {
       if (this.editedIndex > -1) {
-        Object.assign(this.desserts[this.editedIndex], this.editedItem);
+        Object.assign(this.actions[this.editedIndex], this.editedItem);
       } else {
         this.actions.push(this.editedItem);
       }
