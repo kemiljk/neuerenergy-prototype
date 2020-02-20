@@ -7,11 +7,13 @@
         <v-btn class="mx-auto">See more</v-btn>
       </div>
     </v-card-title>
-    <v-row>
-      <v-col cols="12" v-for="notification in notifications" :key="`${notification.id}`">
-        <Notifications :notification="notification" />
-      </v-col>
-    </v-row>
+    <v-card-content>
+      <v-row>
+        <v-col cols="12" v-for="notification in notifications" :key="`${notification.id}`">
+          <Notifications :notification="notification" />
+        </v-col>
+      </v-row>
+    </v-card-content>
   </v-card>
 </template>
 

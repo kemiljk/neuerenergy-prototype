@@ -29,11 +29,6 @@
         "url": "/contracts"
     },
     {
-        "title": "Inbox",
-        "icon": "mdi-email",
-        "url": "/inbox"
-    },
-    {
         "title": "To-Do",
         "icon": "mdi-playlist-check",
         "url": "/to-do"

@@ -31,7 +31,6 @@
     <v-row>
       <v-col
         cols="12"
-        md="6"
         v-for="notificationCard in notificationCards"
         :key="`${notificationCard.id}`"
       >
@@ -61,13 +60,9 @@ export default {
       notificationCards: [
         {
           id: uuid(),
-          headline: "In-Negotiation PPAs"
-        },
-        {
-          id: uuid(),
-          headline: "In-Life PPAs"
+          headline: "PPAs"
         }
-      ]
+      ],
     };
   },
   methods: {
