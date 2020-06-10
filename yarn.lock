@@ -2022,7 +2022,7 @@
     vue-cli-plugin-apollo "^0.21.3"
     watch "^1.0.2"
 
-"@vue/cli@^4.2.2":
+"@vue/cli@^4.4.1":
   version "4.4.1"
   resolved "https://registry.yarnpkg.com/@vue/cli/-/cli-4.4.1.tgz#a294e7e817e822c7814a75bf175567dfd9d3c716"
   integrity sha512-X9K0EZFipqnckuzaUa2MzCtxPzazy4CwCJN0OTeXwc6I3q8f0M3H/5BuJM7cGPBn9CHDQTsiR1x7b2t3IKw7Vg==
@@ -12982,7 +12982,7 @@ webpack-sources@^1.1.0, webpack-sources@^1.4.0, webpack-sources@^1.4.1, webpack-
     source-list-map "^2.0.0"
     source-map "~0.6.1"
 
-webpack@^4.0.0:
+webpack@^4.0.0, webpack@^4.43.0:
   version "4.43.0"
   resolved "https://registry.yarnpkg.com/webpack/-/webpack-4.43.0.tgz#c48547b11d563224c561dad1172c8aa0b8a678e6"
   integrity sha512-GW1LjnPipFW2Y78OOab8NJlCflB7EFskMih2AHdvjbpKMeDJqEgSx24cXXXiPS65+WSwVyxtDsJH6jGX2czy+g==
