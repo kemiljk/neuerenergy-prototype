@@ -1,6 +1,6 @@
 <template>
   <v-card>
-    <v-card-title class="primary--text font-weight-bold">{{ card.headline }}</v-card-title>
+    <v-card-title class="font-weight-bold">{{ card.headline }}</v-card-title>
     <v-divider></v-divider>
     <v-card-text class="mt-2 body-1 mb-2">{{ card.text }}</v-card-text>
       <v-btn class="primary ml-3 mb-4" href="tel:+442072422956">

@@ -1,22 +1,22 @@
 [
-  {
-          "id": "uuid()",
-          "headline": "Total MWh purchased",
-          "title": "0"
-  },
-  {
-          "id": "uuid()",
-          "headline": "Number of certificates received ",
-          "title": "0"
-  },
-  {
-          "id": "uuid()",
-          "headline": "Price savings to date",
-          "title": "$0"
-  },
-  {
-          "id": "uuid()",
-          "headline": "Tonnes of CO₂ saved to date",
-          "title": "0"
-  }
+        {
+                "id": "uuid()",
+                "headline": "Total MWh purchased",
+                "title": "1.9m"
+        },
+        {
+                "id": "uuid()",
+                "headline": "Number of certificates received ",
+                "title": "1.3m"
+        },
+        {
+                "id": "uuid()",
+                "headline": "Price savings to date",
+                "title": "£16.7m"
+        },
+        {
+                "id": "uuid()",
+                "headline": "Tonnes of CO₂ saved to date",
+                "title": "10,523"
+        }
 ]

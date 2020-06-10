@@ -1,18 +1,8 @@
 [
     {
-        "title": "Manage people",
-        "icon": "mdi-account-group",
-        "url": "/manage-people"
-    },
-    {
         "title": "Dashboard",
         "icon": "mdi-view-dashboard",
         "url": "/"
-    },
-    {
-        "title": "Workflow",
-        "icon": "mdi-graph",
-        "url": "/workflow-list"
     },
     {
         "title": "Sites",
@@ -25,6 +15,11 @@
         "url": "/analysis"
     },
     {
+        "title": "To-Do",
+        "icon": "mdi-playlist-check",
+        "url": "/to-do"
+    },
+    {
         "title": "Generators",
         "icon": "mdi-city",
         "url": "/generators"
@@ -33,11 +28,6 @@
         "title": "Contracts",
         "icon": "mdi-note-text",
         "url": "/contracts"
-    },
-    {
-        "title": "To-Do",
-        "icon": "mdi-playlist-check",
-        "url": "/to-do"
     },
     {
         "title": "Reports",

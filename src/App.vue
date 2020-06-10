@@ -54,7 +54,7 @@
         <v-icon>mdi-menu</v-icon>
       </v-btn>
       <div class="d-none d-lg-block">
-        <img src="./assets/NeuerEnergy_Logotype-white.png" height="40px" />
+        <img src="/logo.png" height="40px" />
       </div>
       <v-spacer />
       <v-app-bar-title class="text-center" v-for="profile in profile" :key="`${profile.id}`">

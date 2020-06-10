@@ -1,8 +1,8 @@
 <template>
   <v-card>
-    <v-card-title class="primary--text font-weight-bold">{{ card.headline }}</v-card-title>
+    <v-card-title class="font-weight-bold">{{ card.headline }}</v-card-title>
     <v-divider></v-divider>
-    <v-card-text class="mt-4 font-weight-bold headline">{{ card.value }}</v-card-text>
+    <v-card-text class="mt-4 primary--text font-weight-bold headline">{{ card.value }}</v-card-text>
     <v-slider
       v-model="percentage"
       thumb-label

@@ -9,13 +9,13 @@
   {
     "id": "uuid()",
     "headline": "CO₂ footprint",
-    "title": "0",
+    "title": "12,345",
     "description": "Tonnes of CO₂ per year"
   },
   {
     "id": "uuid()",
     "headline": "Energy consumption",
-    "title": "0",
+    "title": "246k",
     "description": "MWh per year"
   }
 ]

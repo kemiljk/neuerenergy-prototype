@@ -1,13 +1,13 @@
 <template>
   <v-container>
     <v-row class="mt-8">
-      <v-col cols="12" md="6">
+      <v-col cols="12">
         <h1>Sites</h1>
         <h3>You haven't got any sites yet, add some data below to populate your system</h3>
       </v-col>
-      <v-col cols="12" md="6">
-        <v-card>
-          <v-card-title class="primary--text font-weight-bold">Upload files</v-card-title>
+      <v-col cols="6">
+        <v-card class="mb-6">
+          <v-card-title class="font-weight-bold">Upload files</v-card-title>
           <v-card-text>Upload spreadsheets, PDFs or other documents that include information about your sites.</v-card-text>
           <v-file-input
             v-model="files"
@@ -36,7 +36,7 @@
               :loading="loading"
               :disabled="loading"
               color="primary"
-              class="ma-2 white--text"
+              class="my-4 white--text"
               @click="loader = 'loading'"
             >
               Upload
@@ -44,10 +44,40 @@
             </v-btn>
           </div>
         </v-card>
-      </v-col>
-      <v-col cols="12">
         <v-card>
-          <v-card-title class="primary--text font-weight-bold">Input data manually</v-card-title>
+          <v-card-title class="font-weight-bold">Connect via API</v-card-title>
+          <v-card-text>Connect your sites data via various API types.</v-card-text>
+          
+          <div class="text-center">
+            <v-btn
+              color="primary"
+              class="my-4 mr-2"
+            >
+              Business Intelligence
+              <v-icon right dark>mdi-head-snowflake-outline</v-icon>
+            </v-btn>
+            <v-btn
+              color="secondary"
+              class="my-4 mr-2 primary--text"
+            >
+              Robotic automation
+              <v-icon right dark>mdi-robot</v-icon>
+            </v-btn>
+            <v-btn
+              color="primary"
+              class="my-4 primary--text"
+              outlined
+              @click="loader = 'loading'"
+            >
+              Custom integration
+              <v-icon right dark>mdi-cog-outline</v-icon>
+            </v-btn>
+          </div>
+        </v-card>
+      </v-col>
+      <v-col cols="6">
+        <v-card>
+          <v-card-title class="font-weight-bold">Input data manually</v-card-title>
           <v-card-text>Initiate site setup by adding the site title, location, total carbon emissions, total energy consumption and carbon footprint (if known).</v-card-text>
           <form class="mr-4 ml-4">
             <v-text-field
