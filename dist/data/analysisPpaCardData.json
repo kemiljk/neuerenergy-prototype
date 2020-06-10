@@ -1,0 +1,13 @@
+[
+  {
+    "id": "uuid()",
+    "headline": "Virtual PPA",
+    "value": "2,089,300.80 USD"
+  },
+  {
+    "id": "uuid()",
+    "headline": "Sleeved PPA",
+    "value": "3,369,840.00 USD",
+    "description": "Ending in 2025"
+  }
+]

@@ -1,0 +1,12 @@
+[
+  {
+    "title": "Company Profile",
+    "icon": "mdi-domain",
+    "url": "/company-profile"
+  },
+  {
+    "title": "Sign out",
+    "icon": "mdi-logout-variant",
+    "url": "/sign-out"
+  }
+]

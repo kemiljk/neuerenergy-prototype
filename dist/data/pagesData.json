@@ -1,0 +1,37 @@
+[
+    {
+        "title": "Dashboard",
+        "icon": "mdi-view-dashboard",
+        "url": "/"
+    },
+    {
+        "title": "Sites",
+        "icon": "mdi-map-marker",
+        "url": "/sites"
+    },
+    {
+        "title": "Analysis",
+        "icon": "mdi-tune",
+        "url": "/analysis"
+    },
+    {
+        "title": "To-Do",
+        "icon": "mdi-playlist-check",
+        "url": "/to-do"
+    },
+    {
+        "title": "Generators",
+        "icon": "mdi-city",
+        "url": "/generators"
+    },
+    {
+        "title": "Contracts",
+        "icon": "mdi-note-text",
+        "url": "/contracts"
+    },
+    {
+        "title": "Reports",
+        "icon": "mdi-chart-areaspline",
+        "url": "/reports"
+    }
+]

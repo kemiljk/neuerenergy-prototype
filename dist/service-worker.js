@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/precache-manifest.c1141e86520090272b9d29bf265d0c48.js"
+  "/precache-manifest.4e742e87915dbc323ef593182cab90c2.js"
 );
 
 workbox.core.setCacheNameDetails({prefix: "neuerenergy-pwa"});

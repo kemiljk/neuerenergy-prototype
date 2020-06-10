@@ -1,0 +1,12 @@
+[
+  { 
+    "text": "ACTION",
+    "align": "left",
+    "sortable": false,
+    "value": "title"
+  },
+  { "text": "DESCRIPTION", "value": "task" },
+  { "text": "DUE DATE", "value": "date" },
+  { "text": "STATUS", "value": "status" },
+  { "text": "ACTIONS", "value": "action", "sortable": false }
+]

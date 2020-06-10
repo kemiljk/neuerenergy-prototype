@@ -1,0 +1,12 @@
+[{
+        "text": "Title",
+        "align": "left",
+        "sortable": false,
+        "value": "name"
+    },
+    { "text": "Status", "align": "left", "value": "status" },
+    { "text": "Applied to", "align": "left", "value": "profile" },
+    { "text": "Tasks in-progress", "value": "carbs" },
+    { "text": "Due tasks", "value": "protein" },
+    { "text": false, "value": "action", "sortable": false }
+]

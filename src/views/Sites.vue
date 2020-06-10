@@ -67,7 +67,6 @@
               color="primary"
               class="my-4 primary--text"
               outlined
-              @click="loader = 'loading'"
             >
               Custom integration
               <v-icon right dark>mdi-cog-outline</v-icon>

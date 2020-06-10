@@ -1,0 +1,9 @@
+[{
+        "text": "Title",
+        "align": "left",
+        "sortable": false,
+        "value": "name"
+    },
+    { "text": "Category", "align": "left", "value": "category" },
+    { "text": false, "align": "left", "value": "action", "sortable": false }
+]
