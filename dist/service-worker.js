@@ -14,16 +14,12 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/precache-manifest.c6aff6c21c6e0e8f944a39fab498e04f.js"
+  "/precache-manifest.06623f3ae839ca98fc8d0ee79dde4f0c.js"
 );
 
 workbox.core.setCacheNameDetails({prefix: "neuerenergy-pwa"});
 
-self.addEventListener('message', (event) => {
-  if (event.data && event.data.type === 'SKIP_WAITING') {
-    self.skipWaiting();
-  }
-});
+workbox.core.skipWaiting();
 
 /**
  * The workboxSW.precacheAndRoute() method efficiently caches and responds to
