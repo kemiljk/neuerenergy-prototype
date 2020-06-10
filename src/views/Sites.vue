@@ -5,7 +5,7 @@
         <h1>Sites</h1>
         <h3>You haven't got any sites yet, add some data below to populate your system</h3>
       </v-col>
-      <v-col cols="6">
+      <v-col cols="12" lg="6">
         <v-card class="mb-6">
           <v-card-title class="font-weight-bold">Upload files</v-card-title>
           <v-card-text>Upload spreadsheets, PDFs or other documents that include information about your sites.</v-card-text>
@@ -74,7 +74,7 @@
           </div>
         </v-card>
       </v-col>
-      <v-col cols="6">
+      <v-col cols="12" lg="6">
         <v-card>
           <v-card-title class="font-weight-bold">Input data manually</v-card-title>
           <v-card-text>Initiate site setup by adding the site title, location, total carbon emissions, total energy consumption and carbon footprint (if known).</v-card-text>
