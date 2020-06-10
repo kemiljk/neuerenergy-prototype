@@ -123,7 +123,6 @@ const routes = [{
         component: () =>
             import ('../views/Components.vue')
     },
-
 ]
 
 const router = new VueRouter({
