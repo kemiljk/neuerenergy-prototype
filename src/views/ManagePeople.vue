@@ -5,7 +5,7 @@
         <h1>Manage people</h1>
       </v-col>
     </v-row>
-   <!--  <v-row>
+  <!--  <v-row>
         <v-col>
             <v-data-table
                 v-bind:headers="headers"
