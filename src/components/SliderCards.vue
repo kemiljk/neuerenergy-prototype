@@ -10,7 +10,7 @@
       track-fill-color="primary"
       thumb-color="primary"
     ></v-slider>
-    <v-card-text class="mt-4 font-weight-medium display-2">{{ card.title }}</v-card-text>
+    <v-card-text><span class="mt-4 font-weight-medium display-2" v-text="slider"></span><span class="mt-4 font-weight-medium display-2">%</span></v-card-text> 
     <v-card-text>{{ card.description }}</v-card-text>
   </v-card>
 </template>
@@ -25,7 +25,7 @@ export default {
   },
   data() {
     return {
-      slider: 50
+      slider: 50,
     };
   }
 };
