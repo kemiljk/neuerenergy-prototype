@@ -21,6 +21,9 @@
       <v-col cols="12" md="6" v-for="card in sliders" :key="`${card.id}`">
         <SliderCards :card="card" />
       </v-col>
+      <v-col cols="12" md="6" v-for="card in timelines" :key="`${card.id}`">
+        <TimelineCards :card="card" />
+      </v-col>
     </v-row>
     <v-row>
       <v-col cols="12" md="6" v-for="card in ppas" :key="`${card.id}`">
@@ -52,6 +55,7 @@
 <script>
 import Cards from "../components/Cards";
 import SliderCards from "../components/SliderCards";
+import TimelineCards from "../components/TimelineCards";
 import PPASliderCards from "../components/PPASliderCards";
 import CtaCards from "../components/CtaCards";
 
@@ -60,12 +64,14 @@ export default {
   mounted() {
     this.getAnalysisCardData();
     this.getAnalysisSliderCardData();
+    this.getAnalysisTimelineCardData();
     this.getAnalysisPpaCardData();
     this.getCtaCardData();
   },
   components: {
     Cards,
     SliderCards,
+    TimelineCards,
     PPASliderCards,
     CtaCards
   },
@@ -73,6 +79,7 @@ export default {
     return {
       cards: [],
       sliders: [],
+      timelines: [],
       ppas: [],
       ctas: [],
       items: ["London", "Singapore", "Germany", "+ add more"]
@@ -88,6 +95,11 @@ export default {
       fetch("/data/analysisSliderCardData.json")
         .then(response => response.json())
         .then(data => (this.sliders = data));
+    },
+    getAnalysisTimelineCardData: function() {
+      fetch("/data/analysisTimelineCardData.json")
+        .then(response => response.json())
+        .then(data => (this.timelines = data));
     },
     getAnalysisPpaCardData: function() {
       fetch("/data/analysisPpaCardData.json")
